@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Shippori+Mincho+B1:wght@400;700&display=swap');
+
+:root {
+  /* 落ち着いたアッシュ＆ウォーターカラーシステム */
+  --bg-dark: #08192D;      /* 深いミッドナイトブルー */
+  --bg-card: rgba(20, 27, 33, 0.55);
+  --bg-card-hover: rgba(29, 39, 48, 0.7);
+  --primary: #336774;      /* ユーザーお気に入りの淡い鴨の羽色・スレートブルー */
+  --secondary: #5c7b8c;    /* くすんだアッシュブルー */
+  --accent-soft: #a89498;   /* ニュアンスのあるアッシュピンク（ソフトなアクセント） */
+  --text-primary: #e6ebed;
+  --text-secondary: #8799a3;
+  --border-color: rgba(255, 255, 255, 0.04);
+  --border-focus: rgba(51, 103, 116, 0.25);
+  
+  /* フォントスタック */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Shippori Mincho B1', serif;
+
+  /* イージング・トランジション */
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* 共通ユーティリティ */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 12px; /* 少し角をマイルドに */
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(51, 103, 116, 0.2);
+  box-shadow: 0 15px 40px -20px rgba(0, 0, 0, 0.3);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 水面の揺らぎエフェクト用の背景アニメーション */
+.water-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(circle at 50% 50%, #0e273e 0%, #08192D 100%);
+  overflow: hidden;
+}
+
+.water-ripple {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(51, 103, 116, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(92, 123, 140, 0.04) 0%, transparent 50%);
+  animation: rotateRipple 50s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes rotateRipple {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* セクションレイアウト */
+.section-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 24px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400; /* 明朝体の細さを活かす */
+  letter-spacing: 0.05em;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  color: var(--text-primary);
+}
+
+
+
+/* ボタン共通 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(51, 103, 116, 0.15);
+  border: 1px solid rgba(51, 103, 116, 0.3);
+  color: var(--text-primary);
+  padding: 10px 24px;
+  border-radius: 2px; /* 少し直線的にして落ち着き感を出す */
+  font-weight: 400;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.btn-primary:hover {
+  background: rgba(51, 103, 116, 0.25);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  padding: 10px 24px;
+  border-radius: 2px;
+  font-weight: 400;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
