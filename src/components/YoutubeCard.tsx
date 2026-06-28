@@ -131,6 +131,19 @@ export const YoutubeCard: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* foriio への "More" 導線 */}
+        <div className="more-works-container">
+          <a 
+            href="https://fori.io/ushi5555" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="more-works-link"
+          >
+            <span>More Works on foriio</span>
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
 
       {/* 動画ポップアップモーダル */}
@@ -182,7 +195,7 @@ export const YoutubeCard: React.FC = () => {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          margin-bottom: 28px; /* 少し狭く調整 */
+          margin-bottom: 28px;
           gap: 24px;
         }
 
@@ -199,6 +212,11 @@ export const YoutubeCard: React.FC = () => {
           margin-top: 12px;
         }
 
+        /* お気に入り動画コンテナの下部マージン明示設定 */
+        .featured-video-wrapper {
+          margin-bottom: 48px;
+        }
+
         .works-section-label {
           font-size: 0.75rem;
           color: #8799a3;
@@ -206,11 +224,6 @@ export const YoutubeCard: React.FC = () => {
           letter-spacing: 0.15em;
           margin-bottom: 12px;
           font-family: var(--font-serif);
-        }
-
-        /* お気に入り動画コンテナの下部マージン明示設定 */
-        .featured-video-wrapper {
-          margin-bottom: 48px; /* 下側のマージンをしっかりと確保 */
         }
 
         .video-grid {
@@ -228,6 +241,31 @@ export const YoutubeCard: React.FC = () => {
           .video-grid {
             grid-template-columns: 1fr;
           }
+        }
+
+        /* foriio への More リンク配置 */
+        .more-works-container {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 24px;
+        }
+
+        .more-works-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: var(--text-secondary);
+          font-size: 0.85rem;
+          font-family: var(--font-sans);
+          text-decoration: none;
+          transition: var(--transition-smooth);
+          border-bottom: 1px solid transparent;
+          padding-bottom: 2px;
+        }
+
+        .more-works-link:hover {
+          color: var(--primary);
+          border-color: var(--primary);
         }
 
         /* 横長お気に入り動画カード */
@@ -273,7 +311,7 @@ export const YoutubeCard: React.FC = () => {
           overflow: hidden;
           display: flex;
           flex-direction: column;
-          border-radius: 4px; /* 直線デザインに統一 */
+          border-radius: 4px;
         }
 
         .thumbnail-container {
@@ -382,7 +420,7 @@ export const YoutubeCard: React.FC = () => {
         .modal-content {
           width: 100%;
           max-width: 800px;
-          border-radius: 8px; /* 角をシャープに */
+          border-radius: 8px;
           overflow: hidden;
           position: relative;
           background: #0d1216;
@@ -414,7 +452,7 @@ export const YoutubeCard: React.FC = () => {
         .iframe-wrapper {
           position: relative;
           width: 100%;
-          padding-top: 56.25%; /* 16:9 Aspect Ratio */
+          padding-top: 56.25%;
         }
 
         .iframe-wrapper iframe {
