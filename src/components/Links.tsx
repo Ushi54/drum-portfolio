@@ -81,7 +81,7 @@ export const Links: React.FC = () => {
     },
     {
       name: 'TikTok',
-      url: 'https://vt.tiktok.com/ZSeraUE2m/',
+      url: 'https://www.tiktok.com/@ushi5432?_r=1&_t=ZS-97aiQHq9y3I',
       icon: <TikTokIcon className="w-7 h-7" />,
       description: 'ドラム演奏動画を中心に、ショートクリップをお届け。',
       color: '#607380',
@@ -89,7 +89,7 @@ export const Links: React.FC = () => {
     },
     {
       name: 'Threads',
-      url: 'https://www.threads.net/@ushi5432',
+      url: 'https://www.threads.com/@ushi_5432_drpr?igshid=NTc4MTIwNjQ2YQ==',
       icon: <ThreadsIcon className="w-7 h-7" />,
       description: '基本インスタの投稿が投稿されます。',
       color: '#687882',
