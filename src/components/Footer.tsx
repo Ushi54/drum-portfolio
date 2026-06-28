@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
             <YoutubeIcon className="w-5 h-5" />
           </a>
           <a
-            href="mailto:test@example.com"
+            href="mailto:ushi.54.log@gmail.com"
             className="social-link"
             aria-label="Mail"
           >
@@ -43,6 +43,14 @@ export const Footer: React.FC = () => {
         .social-link {
           color: #94a3b8;
           transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .social-link svg {
+          width: 20px;
+          height: 20px;
         }
 
         .social-link:hover {

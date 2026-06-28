@@ -77,7 +77,7 @@ export const YoutubeCard: React.FC = () => {
 
       {/* 最近のお気に入り動画 (Featured) */}
       <div className="featured-video-wrapper">
-        <p className="text-xs text-slate-400 uppercase tracking-widest mb-4 font-serif">Recent Favorite</p>
+        <p className="works-section-label">Recent Favorite</p>
         <motion.div
           className="featured-video-card glass-panel"
           whileHover={{ y: -4 }}
@@ -103,7 +103,7 @@ export const YoutubeCard: React.FC = () => {
 
       {/* 通常の動画グリッド */}
       <div>
-        <p className="text-xs text-slate-400 uppercase tracking-widest mb-6 font-serif">Drum Covers & Support</p>
+        <p className="works-section-label">Drum Covers & Support</p>
         <div className="video-grid">
           {videos.map((video) => (
             <motion.div
@@ -197,6 +197,15 @@ export const YoutubeCard: React.FC = () => {
 
         .mt-3 {
           margin-top: 12px;
+        }
+
+        .works-section-label {
+          font-size: 0.75rem;
+          color: #8799a3;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          margin-bottom: 12px;
+          font-family: var(--font-serif);
         }
 
         /* お気に入り動画コンテナの下部マージン明示設定 */

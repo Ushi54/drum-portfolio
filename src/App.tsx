@@ -85,8 +85,7 @@ function App() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-slate-900/40 border border-white/5 text-slate-300 text-sm mb-6"
-            style={{ borderRadius: '2px' }}
+            className="hero-badge"
           >
             <Drum className="w-4 h-4 animate-spin-slow" style={{ color: '#336774' }} />
             <span>Drummer Portfolio</span>
@@ -107,7 +106,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hero-desc font-sans text-slate-400"
           >
-            ドラムを叩いているうっしーと申します。楽曲の雰囲気に寄り添ったドラミングを心がけています。これまでの演奏動画やバンド活動のリンクをまとめています。
+            ドラムを叩いてるうっしーです。曲の雰囲気に合わせたドラムを叩いています。これまでの動画やバンド活動のリンクをここにまとめてます。
           </motion.p>
 
           <motion.div
@@ -200,6 +199,19 @@ function App() {
           50% {
             transform: translateY(-12px) scale(1.02) rotate(0.4deg);
           }
+        }
+
+        .hero-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 6px 16px;
+          border-radius: 2px;
+          background-color: rgba(13, 18, 22, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          color: #cbd5e1;
+          font-size: 0.875rem;
+          margin-bottom: 24px;
         }
 
         .hero-content {

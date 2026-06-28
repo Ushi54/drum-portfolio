@@ -78,14 +78,14 @@ export const About: React.FC = () => {
           <p className="profile-title text-gradient font-bold mt-1">Drummer</p>
           
           <p className="profile-bio text-slate-300 mt-6 leading-relaxed text-sm">
-            15歳からドラムを始め、YouTubeのレクチャー動画等を参考に独学でスキルを磨いてきました。
-            ボカロ、ロック、アニソンなど幅広いジャンルをカバーし、ドラムカバーの動画投稿のほか、
-            インディーズバンドのサポートや、自身のバンド「schirm. (シルム)」での活動を行っています。
+            15歳からドラムを始め、YouTubeのレッスン動画などを参考に独学でスキルを磨いてきました。
+            ボカロ、ロック、アニソンなど幅広いジャンルをカバーし、ドラムカバーやコラボ演奏動画の投稿、
+            楽曲でのドラム担当、および自身の所属バンド「schirm. (シルム)」での活動を行っています。
           </p>
-
+ 
           <p className="profile-bio text-slate-300 mt-4 leading-relaxed text-sm">
-            プレイスタイルは、歌に寄り添う心地よいグルーヴと、ゴーストノートを交えた繊細なニュアンス表現を大切にしています。
-            ライブパフォーマンスでは、「自分がステージで一番楽しむこと」をモットーに、オーディエンスを楽しませるドラミングを追求しています。
+            ドラムを叩くときは、ボーカルが歌いやすい演奏を一番に意識しつつ、ゴーストノートを交えた繊細なニュアンスも大切にしてます。
+            ライブでは「自分がステージ上で一番楽しむこと」をモットーに、見ている人も一緒に楽しめるようなドラムを目指してます！
           </p>
         </motion.div>
 
@@ -145,8 +145,8 @@ export const About: React.FC = () => {
               Gear & Favorites
             </h4>
             
-            <div className="mb-6">
-              <p className="text-xs text-slate-400 uppercase tracking-wider mb-3">My Gear</p>
+            <div className="gear-wrapper">
+              <p className="about-section-label">My Gear</p>
               <div className="gear-categories-grid">
                 {gearCategories.map((category) => (
                   <div key={category.title} className="gear-category-block">
@@ -166,7 +166,7 @@ export const About: React.FC = () => {
 
             {/* Inspirations用コンテナ（個別にpaddingを設定） */}
             <div className="inspirations-container">
-              <p className="text-xs text-slate-400 uppercase tracking-wider mb-3">Inspirations</p>
+              <p className="about-section-label">Inspirations</p>
               <div className="flex flex-wrap gap-2">
                 {favoriteArtists.map((artist) => (
                   <span key={artist} className="skill-badge artist-badge">{artist}</span>
@@ -246,6 +246,18 @@ export const About: React.FC = () => {
         .card-sub-title {
           font-size: 1.15rem;
           margin-bottom: 18px;
+        }
+
+        .gear-wrapper {
+          margin-bottom: 40px;
+        }
+
+        .about-section-label {
+          font-size: 0.75rem;
+          color: #8799a3;
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          margin-bottom: 12px;
         }
 
         .skill-badge {
@@ -358,6 +370,7 @@ export const About: React.FC = () => {
           border-radius: 4px;
           padding: 16px; /* お気に入りアーティスト欄内のインサイド余白 */
           margin-top: 24px; /* 機材欄との縦余白 */
+          margin-bottom: 16px; /* カード底辺との間の余白を追加 */
           transition: border-color 0.3s;
         }
 

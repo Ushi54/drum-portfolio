@@ -51,7 +51,7 @@ export const Links: React.FC = () => {
       name: 'うっしー - foriio',
       url: 'https://fori.io/ushi5555',
       icon: <PortfolioIcon className="w-7 h-7" />,
-      description: 'ドラマーとしての実績や作品情報をまとめたクリエイターポートフォリオです。',
+      description: 'ドラマーとしての実績や作品情報をまとめたポートフォリオです。',
       color: '#336774',
       glowColor: 'rgba(51, 103, 116, 0.15)',
     },
@@ -75,7 +75,7 @@ export const Links: React.FC = () => {
       name: 'Instagram',
       url: 'https://www.instagram.com/ushi5432_drums',
       icon: <InstagramIcon className="w-7 h-7" />,
-      description: '演奏のショートクリップや愛用ドラム機材のギャラリー。',
+      description: '演奏のショートクリップや愛用ドラム機材のギャラリー。割とプライベートなストーリーとかも載せています。',
       color: '#a89498',
       glowColor: 'rgba(168, 148, 152, 0.15)',
     },
@@ -83,7 +83,7 @@ export const Links: React.FC = () => {
       name: 'TikTok',
       url: 'https://vt.tiktok.com/ZSeraUE2m/',
       icon: <TikTokIcon className="w-7 h-7" />,
-      description: 'ドラム演奏動画を中心に、テンポの良いショートクリップをお届け。',
+      description: 'ドラム演奏動画を中心に、ショートクリップをお届け。',
       color: '#607380',
       glowColor: 'rgba(96, 115, 128, 0.15)',
     },
@@ -91,7 +91,7 @@ export const Links: React.FC = () => {
       name: 'Threads',
       url: 'https://www.threads.net/@ushi5432',
       icon: <ThreadsIcon className="w-7 h-7" />,
-      description: 'ドラム活動についての何気ない思考や、テキストベース of 雑記。',
+      description: '基本インスタの投稿が投稿されます。',
       color: '#687882',
       glowColor: 'rgba(104, 120, 130, 0.15)',
     },
@@ -210,8 +210,13 @@ export const Links: React.FC = () => {
       <style>{`
         /* リンクヘッダーマージン */
         .links-header {
-          text-align: center;
+          text-align: left;
           margin-bottom: 48px; /* 紹介文と見出しの間のマージン */
+        }
+
+        .link-icon-container svg {
+          width: 28px;
+          height: 28px;
         }
 
         .mt-4 {

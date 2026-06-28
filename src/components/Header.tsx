@@ -83,7 +83,7 @@ export const Header: React.FC = () => {
             <a href="https://youtube.com/channel/UCjYzaIL8YhXh671FyjcYikg" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-400 transition-colors">
               <YoutubeIcon className="w-5 h-5" />
             </a>
-            <a href="mailto:test@example.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
+            <a href="mailto:ushi.54.log@gmail.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
               <MailIcon className="w-5 h-5" />
             </a>
           </div>
@@ -123,7 +123,7 @@ export const Header: React.FC = () => {
               <a href="https://youtube.com/channel/UCjYzaIL8YhXh671FyjcYikg" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-400 transition-colors">
                 <YoutubeIcon className="w-6 h-6" />
               </a>
-              <a href="mailto:test@example.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
+              <a href="mailto:ushi.54.log@gmail.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
                 <MailIcon className="w-6 h-6" />
               </a>
             </div>
@@ -180,6 +180,16 @@ export const Header: React.FC = () => {
         .tracking-wider { letter-spacing: 0.05em; }
         .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
         .mt-8 { margin-top: 32px; }
+
+        /* SVGアイコンサイズ強制 */
+        svg.w-5 {
+          width: 20px;
+          height: 20px;
+        }
+        svg.w-6 {
+          width: 24px;
+          height: 24px;
+        }
       `}</style>
     </>
   );
