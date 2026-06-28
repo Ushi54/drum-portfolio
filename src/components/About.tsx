@@ -176,8 +176,11 @@ export const About: React.FC = () => {
           </motion.div>
         </div>
       </div>
-
       <style>{`
+        #about {
+          padding-bottom: 120px;
+        }
+
         .about-grid {
           display: grid;
           grid-template-columns: 1.2fr 1.8fr;
@@ -188,6 +191,9 @@ export const About: React.FC = () => {
         @media (max-width: 900px) {
           .about-grid {
             grid-template-columns: 1fr;
+          }
+          .skill-column {
+            margin-bottom: 32px;
           }
         }
 
@@ -239,6 +245,7 @@ export const About: React.FC = () => {
 
         .card-sub-title {
           font-size: 1.15rem;
+          margin-bottom: 18px;
         }
 
         .skill-badge {

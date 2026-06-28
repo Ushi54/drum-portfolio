@@ -91,7 +91,7 @@ export const Links: React.FC = () => {
       name: 'Threads',
       url: 'https://www.threads.net/@ushi5432',
       icon: <ThreadsIcon className="w-7 h-7" />,
-      description: 'ドラム活動についての何気ない思考や、テキストベースの雑記。',
+      description: 'ドラム活動についての何気ない思考や、テキストベース of 雑記。',
       color: '#687882',
       glowColor: 'rgba(104, 120, 130, 0.15)',
     },
@@ -127,7 +127,8 @@ export const Links: React.FC = () => {
 
   return (
     <section id="links" className="section-container">
-      <div className="text-center mb-16">
+      {/* ヘッダーコンテナ */}
+      <div className="links-header">
         <h2 className="section-title">Links</h2>
         <p className="text-slate-400 mt-4 max-w-xl mx-auto font-sans text-sm">
           ドラマー個人としての各アカウント、および所属バンド「schirm.」の公式リンク集です。
@@ -135,8 +136,8 @@ export const Links: React.FC = () => {
       </div>
 
       {/* 1. 個人用アカウントセクション */}
-      <div className="mb-16">
-        <h3 className="links-group-title font-serif text-slate-400 mb-6">Personal Links</h3>
+      <div className="links-section-group">
+        <h3 className="links-group-title font-serif text-slate-400">Personal Links</h3>
         <div className="links-grid">
           {personalLinks.map((link) => (
             <motion.a
@@ -171,8 +172,8 @@ export const Links: React.FC = () => {
       </div>
 
       {/* 2. バンド用アカウントセクション */}
-      <div>
-        <h3 className="links-group-title font-serif text-slate-400 mb-6">Band "schirm." Links</h3>
+      <div className="links-section-group">
+        <h3 className="links-group-title font-serif text-slate-400">Band "schirm." Links</h3>
         <div className="links-grid">
           {bandLinks.map((link) => (
             <motion.a
@@ -207,12 +208,32 @@ export const Links: React.FC = () => {
       </div>
 
       <style>{`
+        /* リンクヘッダーマージン */
+        .links-header {
+          text-align: center;
+          margin-bottom: 48px; /* 紹介文と見出しの間のマージン */
+        }
+
+        .mt-4 {
+          margin-top: 16px;
+        }
+
+        /* 各リンクグループのセクション囲み */
+        .links-section-group {
+          margin-bottom: 56px; /* 個人用リンク群とBandリンク見出しの間のマージン */
+        }
+
+        .links-section-group:last-of-type {
+          margin-bottom: 0;
+        }
+
         .links-group-title {
           font-size: 0.85rem;
           text-transform: uppercase;
           letter-spacing: 0.15em;
           border-bottom: 1px solid rgba(255, 255, 255, 0.03);
           padding-bottom: 8px;
+          margin-bottom: 24px; /* 見出しとグリッドの間のマージン */
         }
 
         .links-grid {

@@ -5,7 +5,7 @@ import { YoutubeCard } from './components/YoutubeCard';
 import { About } from './components/About';
 import { Links } from './components/Links';
 import { Footer } from './components/Footer';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown, Drum } from 'lucide-react';
 
 function App() {
   const handleScrollToAbout = () => {
@@ -88,7 +88,7 @@ function App() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-slate-900/40 border border-white/5 text-slate-300 text-sm mb-6"
             style={{ borderRadius: '2px' }}
           >
-            <Sparkles className="w-4 h-4 animate-spin-slow" style={{ color: '#336774' }} />
+            <Drum className="w-4 h-4 animate-spin-slow" style={{ color: '#336774' }} />
             <span>Drummer Portfolio</span>
           </motion.div>
 
@@ -98,8 +98,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-title font-serif"
           >
-            Beat the <span className="text-gradient">Silence</span>.<br />
-            Sound the <span className="text-gradient">Soul</span>.
+            Usshi's Drum <span className="text-gradient">Portfolio.</span>
           </motion.h1>
 
           <motion.p
@@ -108,7 +107,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="hero-desc font-sans text-slate-400"
           >
-            15歳から叩き続けるドラムのビート。楽曲の「余白」と「空気感」を捉え、繊細なニュアンスからダイナミックな高揚感まで、静寂を撃ち抜くリズムの世界へ。
+            ドラムを叩いているうっしーと申します。楽曲の雰囲気に寄り添ったドラミングを心がけています。これまでの演奏動画やバンド活動のリンクをまとめています。
           </motion.p>
 
           <motion.div
@@ -221,6 +220,13 @@ function App() {
           max-width: 600px;
           margin: 24px auto 0 auto;
           line-height: 1.6;
+        }
+
+        .hero-buttons {
+          margin-top: 40px;
+          display: flex;
+          justify-content: center;
+          gap: 16px;
         }
 
         .absolute { position: absolute; }

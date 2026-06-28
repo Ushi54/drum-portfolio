@@ -55,10 +55,11 @@ export const YoutubeCard: React.FC = () => {
 
   return (
     <section id="works" className="section-container">
-      <div className="flex justify-between items-end mb-12">
-        <div>
+      {/* ヘッダーブロック */}
+      <div className="works-header">
+        <div className="works-header-text">
           <h2 className="section-title">Works</h2>
-          <p className="text-slate-400 mt-4 font-sans text-sm">
+          <p className="text-slate-400 font-sans text-sm mt-3">
             YouTubeに投稿している演奏動画やサポート実績です。クリックするとその場で再生できます。
           </p>
         </div>
@@ -75,7 +76,7 @@ export const YoutubeCard: React.FC = () => {
       </div>
 
       {/* 最近のお気に入り動画 (Featured) */}
-      <div className="mb-16">
+      <div className="featured-video-wrapper">
         <p className="text-xs text-slate-400 uppercase tracking-widest mb-4 font-serif">Recent Favorite</p>
         <motion.div
           className="featured-video-card glass-panel"
@@ -176,6 +177,33 @@ export const YoutubeCard: React.FC = () => {
       </AnimatePresence>
 
       <style>{`
+        /* ヘッダーマージン調整 */
+        .works-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: 28px; /* 少し狭く調整 */
+          gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+          .works-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+          }
+        }
+
+        .mt-3 {
+          margin-top: 12px;
+        }
+
+        /* お気に入り動画コンテナの下部マージン明示設定 */
+        .featured-video-wrapper {
+          margin-bottom: 48px; /* 下側のマージンをしっかりと確保 */
+        }
+
         .video-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
