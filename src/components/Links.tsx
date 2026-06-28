@@ -73,7 +73,7 @@ export const Links: React.FC = () => {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/ushi5432_drums',
+      url: 'https://www.instagram.com/ushi_5432_drpr?igsh=MW5oMXgwanF4eXAwZw%3D%3D&utm_source=qr',
       icon: <InstagramIcon className="w-7 h-7" />,
       description: '演奏のショートクリップや愛用ドラム機材のギャラリー。割とプライベートなストーリーとかも載せています。',
       color: '#a89498',
