@@ -30,15 +30,15 @@ export const About: React.FC = () => {
       title: 'Acoustic Drums',
       items: [
         'Yamaha RBS1455 (Snare 14"×5.5")',
+        'Yamaha FP9C (Bass Pedal)',
         'Zildjian 漢家兒 18" (China)',
         '小出 808 Splash 8"',
         'Pearl 110HC (Sticks)'
       ]
     },
     {
-      title: 'Pedal & E-Drums',
+      title: 'E-Drums',
       items: [
-        'Yamaha FP9C (Bass Pedal)',
         'Roland TD713SC-S (E-Drums)'
       ]
     },
