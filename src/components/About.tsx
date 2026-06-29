@@ -1,12 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Music, Info, Star } from 'lucide-react';
-
 export const About: React.FC = () => {
   const favoriteArtists = [
-    'ヨルシカ', 'ずっと真夜中でいいのに。', 'NoisyCell', 'Fall Out Boy', 
-    'Polyphia', 'Fear, and Loathing in Las Vegas', 'the band apart', 
-    'harha', 'mabanua', 'supercell', 'haruka nakamura'
+    { name: 'ヨルシカ', url: 'https://music.apple.com/jp/artist/yorushika/1252062635' },
+    { name: 'ずっと真夜中でいいのに。', url: 'https://music.apple.com/jp/artist/zutomayo/1415664188' },
+    { name: 'NoisyCell', url: 'https://music.apple.com/jp/artist/noisycell/1440058564' },
+    { name: 'Fall Out Boy', url: 'https://music.apple.com/jp/artist/fall-out-boy/3344685' },
+    { name: 'Polyphia', url: 'https://music.apple.com/jp/artist/polyphia/640828340' },
+    { name: 'Fear, and Loathing in Las Vegas', url: 'https://music.apple.com/jp/artist/fear-and-loathing-in-las-vegas/387401340' },
+    { name: 'the band apart', url: 'https://music.apple.com/jp/artist/the-band-apart/78726207' },
+    { name: 'harha', url: 'https://music.apple.com/jp/artist/harha/1647414902' },
+    { name: 'mabanua', url: 'https://music.apple.com/jp/artist/mabanua/291537646' },
+    { name: 'supercell', url: 'https://music.apple.com/jp/artist/supercell/325514619' },
+    { name: 'haruka nakamura', url: 'https://music.apple.com/jp/artist/haruka-nakamura/296535560' }
   ];
 
   // 詳細・整理された正確な愛用機材データ
@@ -173,7 +180,15 @@ export const About: React.FC = () => {
               <p className="about-section-label">Inspirations</p>
               <div className="flex flex-wrap gap-2">
                 {favoriteArtists.map((artist) => (
-                  <span key={artist} className="skill-badge artist-badge">{artist}</span>
+                  <a 
+                    key={artist.name} 
+                    href={artist.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="skill-badge artist-badge"
+                  >
+                    {artist.name}
+                  </a>
                 ))}
               </div>
             </div>
@@ -271,6 +286,9 @@ export const About: React.FC = () => {
           background: rgba(255, 255, 255, 0.02);
           border: 1px solid rgba(255, 255, 255, 0.04);
           color: #8799a3;
+          text-decoration: none;
+          display: inline-block;
+          cursor: pointer;
           transition: all 0.4s ease;
         }
 
