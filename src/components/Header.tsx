@@ -70,10 +70,10 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
           {/* ロゴ */}
-          <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-2 text-white font-bold text-xl tracking-wider">
-            <Music className="w-5 h-5" style={{ color: '#336774' }} />
-            <span className="font-serif text-lg tracking-wide text-white">うっしー</span>
-            <span className="text-xs font-sans text-slate-400 font-normal ml-1">-portfolio-</span>
+          <a href="#home" onClick={(e) => handleScrollTo(e, '#home')} className="flex items-center gap-1.5 text-white font-bold tracking-wider logo-container">
+            <Music className="w-5 h-5 logo-music-icon" style={{ color: 'var(--primary)' }} />
+            <span className="font-serif text-white logo-name">うっしー</span>
+            <span className="font-sans text-slate-400 font-normal logo-sub">-portfolio-</span>
           </a>
 
           {/* デスクトップナビゲーション */}
@@ -126,30 +126,6 @@ export const Header: React.FC = () => {
             <a href="mailto:ushi.54.log@gmail.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
               <MailIcon className="w-5 h-5" />
             </a>
-          </div>
-
-          {/* モバイル用テーマセレクター */}
-          <div className="flex md:hidden items-center gap-3 mr-3">
-            <button 
-              onClick={() => setTheme('default')} 
-              className={`theme-dot theme-dot-default ${theme === 'default' ? 'active' : ''}`}
-              aria-label="Default Theme"
-            />
-            <button 
-              onClick={() => setTheme('matcha')} 
-              className={`theme-dot theme-dot-matcha ${theme === 'matcha' ? 'active' : ''}`}
-              aria-label="Matcha Theme"
-            />
-            <button 
-              onClick={() => setTheme('aoi')} 
-              className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
-              aria-label="Aoi Theme"
-            />
-            <button 
-              onClick={() => setTheme('momiji')} 
-              className={`theme-dot theme-dot-momiji ${theme === 'momiji' ? 'active' : ''}`}
-              aria-label="Momiji Theme"
-            />
           </div>
 
           {/* モバイルメニューボタン */}
@@ -328,6 +304,38 @@ export const Header: React.FC = () => {
           box-shadow: 0 0 8px var(--primary);
         }
         
+        .logo-container {
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          text-decoration: none;
+        }
+        
+        .logo-name {
+          font-size: 1.1rem;
+          letter-spacing: 0.05em;
+        }
+        
+        .logo-sub {
+          font-size: 0.75rem;
+          margin-left: 2px;
+          opacity: 0.8;
+        }
+
+        @media (max-width: 480px) {
+          .logo-name {
+            font-size: 0.95rem;
+          }
+          .logo-sub {
+            font-size: 0.65rem;
+          }
+          svg.logo-music-icon {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
         .mr-2 { margin-right: 8px; }
         .mr-3 { margin-right: 12px; }
         .mr-4 { margin-right: 16px; }
