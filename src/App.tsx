@@ -87,7 +87,7 @@ function App() {
             transition={{ duration: 0.8 }}
             className="hero-badge"
           >
-            <Drum className="w-4 h-4 animate-spin-slow" style={{ color: '#336774' }} />
+            <Drum className="w-4 h-4 animate-spin-slow" style={{ color: 'var(--primary)' }} />
             <span>Drummer Portfolio</span>
           </motion.div>
 
