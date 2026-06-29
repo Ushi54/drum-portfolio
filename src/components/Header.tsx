@@ -229,9 +229,9 @@ export const Header: React.FC = () => {
         .text-white { color: #ffffff; }
         .text-slate-300 { color: #cbd5e1; }
         .text-slate-400 { color: #94a3b8; }
-        .text-cyan-400 { color: #336774; }
-        .hover\\:text-white:hover { color: #ffffff; }
-        .hover\\:text-cyan-400:hover { color: #336774; }
+        .text-cyan-400 { color: var(--primary); }
+        .hover\:text-white:hover { color: #ffffff; }
+        .hover\:text-cyan-400:hover { color: var(--primary); }
         .hover\\:text-red-400:hover { color: #5c7b8c; }
         .font-bold { font-weight: 700; }
         .text-xl { font-size: 1.25rem; }

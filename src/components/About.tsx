@@ -119,7 +119,7 @@ export const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h4 className="card-sub-title font-serif text-white mb-6 flex items-center gap-2">
-              <Music className="w-5 h-5" style={{ color: '#336774' }} />
+              <Music className="w-5 h-5" style={{ color: 'var(--primary)' }} />
               Play Style & Focus
             </h4>
             <div className="skill-bars">
@@ -139,8 +139,8 @@ export const About: React.FC = () => {
                           key={i} 
                           className="w-4 h-4 star-icon" 
                           style={{ 
-                            color: i < strength.rating ? '#336774' : '#1b2631',
-                            fill: i < strength.rating ? '#336774' : 'transparent',
+                            color: i < strength.rating ? 'var(--primary)' : '#1b2631',
+                            fill: i < strength.rating ? 'var(--primary)' : 'transparent',
                           }} 
                         />
                       ))}
@@ -160,7 +160,7 @@ export const About: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h4 className="card-sub-title font-serif text-white mb-6 flex items-center gap-2">
-              <Info className="w-5 h-5" style={{ color: '#336774' }} />
+              <Info className="w-5 h-5" style={{ color: 'var(--primary)' }} />
               Gear & Favorites
             </h4>
             

@@ -52,8 +52,8 @@ export const Links: React.FC = () => {
       url: 'https://fori.io/ushi5555',
       icon: <PortfolioIcon className="w-7 h-7" />,
       description: 'ドラマーとしての実績や作品情報をまとめたポートフォリオです。',
-      color: '#336774',
-      glowColor: 'rgba(51, 103, 116, 0.15)',
+      color: 'var(--primary)',
+      glowColor: 'var(--border-focus)',
     },
     {
       name: 'YouTube',
@@ -112,8 +112,8 @@ export const Links: React.FC = () => {
       url: 'https://x.com/schirmOfficial',
       icon: <TwitterIcon className="w-7 h-7" />,
       description: 'schirm.の公式X。最新のリリース情報やライブ出演告知などをお届けします。',
-      color: '#336774',
-      glowColor: 'rgba(51, 103, 116, 0.15)',
+      color: 'var(--primary)',
+      glowColor: 'var(--border-focus)',
     },
     {
       name: 'schirm. - Instagram',

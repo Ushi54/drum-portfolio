@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
         }
 
         .social-link:hover {
-          color: #336774;
+          color: var(--primary);
           transform: translateY(-2px);
         }
 

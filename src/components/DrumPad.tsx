@@ -131,7 +131,7 @@ export const DrumPad: React.FC = () => {
       {/* キーボードガイド */}
       <div className="glass-panel keyboard-guide mt-12 p-6 flex justify-between items-center max-w-lg mx-auto">
         <div className="flex items-center gap-3">
-          <Volume2 className="w-5 h-5" style={{ color: '#336774' }} />
+          <Volume2 className="w-5 h-5" style={{ color: 'var(--primary)' }} />
           <span className="text-sm text-slate-300">キーボード操作対応</span>
         </div>
         <div className="flex gap-2">
