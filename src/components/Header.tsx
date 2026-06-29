@@ -116,6 +116,12 @@ export const Header: React.FC = () => {
               title="紅葉"
               aria-label="Momiji Theme"
             />
+            <button 
+              onClick={() => setTheme('monochrome')} 
+              className={`theme-dot theme-dot-monochrome ${theme === 'monochrome' ? 'active' : ''}`}
+              title="白黒"
+              aria-label="Monochrome Theme"
+            />
           </div>
 
           {/* デスクトップSNSリンク */}
@@ -190,6 +196,11 @@ export const Header: React.FC = () => {
                 onClick={() => setTheme('momiji')} 
                 className={`theme-dot theme-dot-momiji ${theme === 'momiji' ? 'active' : ''}`}
                 aria-label="Momiji Theme"
+              />
+              <button 
+                onClick={() => setTheme('monochrome')} 
+                className={`theme-dot theme-dot-monochrome ${theme === 'monochrome' ? 'active' : ''}`}
+                aria-label="Monochrome Theme"
               />
             </div>
           </motion.div>
@@ -291,6 +302,10 @@ export const Header: React.FC = () => {
         
         .theme-dot-momiji {
           background-color: #8E354A;
+        }
+        
+        .theme-dot-monochrome {
+          background-color: #FFFFFF;
         }
         
         .theme-dot:hover {

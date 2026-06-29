@@ -59,6 +59,18 @@ html[data-theme="momiji"] {
   --border-focus: rgba(142, 53, 74, 0.25);
 }
 
+html[data-theme="monochrome"] {
+  --bg-dark: #090909;
+  --bg-gradient-start: #1b1b1b;
+  --bg-gradient-end: #090909;
+  --primary: #FFFFFF;      /* 主要色: 白 */
+  --accent-soft: #cccccc;   /* アクセント: ライトグレー */
+  --secondary: #666666;     /* サブカラー: ダークグレー */
+  --bg-card: rgba(22, 22, 22, 0.6);
+  --bg-card-hover: rgba(38, 38, 38, 0.75);
+  --border-focus: rgba(255, 255, 255, 0.25);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
