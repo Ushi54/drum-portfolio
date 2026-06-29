@@ -35,16 +35,16 @@ html[data-theme="matcha"] {
   --border-focus: rgba(106, 131, 114, 0.25);
 }
 
-html[data-theme="aoi"] {
-  --bg-dark: #05131a;
-  --bg-gradient-start: #0b222d;
-  --bg-gradient-end: #05131a;
-  --primary: #0089A7;      /* 主要色: 蒼・シアン */
-  --accent-soft: #66BAB7;   /* アクセント: 水色 */
-  --secondary: #006284;     /* サブカラー: 深青 */
-  --bg-card: rgba(15, 26, 32, 0.55);
-  --bg-card-hover: rgba(23, 37, 45, 0.7);
-  --border-focus: rgba(0, 137, 167, 0.25);
+html[data-theme="nanohana"] {
+  --bg-dark: #12110d;
+  --bg-gradient-start: #211c14;
+  --bg-gradient-end: #12110d;
+  --primary: #E6C35C;      /* 主要色: 菜の花イエロー・ゴールド */
+  --accent-soft: #D9A05B;   /* アクセント: 金木犀オレンジイエロー */
+  --secondary: #A89F82;     /* サブカラー: アッシュイエロー */
+  --bg-card: rgba(28, 25, 20, 0.55);
+  --bg-card-hover: rgba(38, 34, 27, 0.7);
+  --border-focus: rgba(230, 195, 92, 0.25);
 }
 
 html[data-theme="momiji"] {

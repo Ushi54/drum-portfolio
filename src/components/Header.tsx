@@ -105,10 +105,10 @@ export const Header: React.FC = () => {
               aria-label="Matcha Theme"
             />
             <button 
-              onClick={() => setTheme('aoi')} 
-              className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
-              title="蒼"
-              aria-label="Aoi Theme"
+              onClick={() => setTheme('nanohana')} 
+              className={`theme-dot theme-dot-nanohana ${theme === 'nanohana' ? 'active' : ''}`}
+              title="菜の花"
+              aria-label="Nanohana Theme"
             />
             <button 
               onClick={() => setTheme('momiji')} 
@@ -188,9 +188,9 @@ export const Header: React.FC = () => {
                 aria-label="Matcha Theme"
               />
               <button 
-                onClick={() => setTheme('aoi')} 
-                className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
-                aria-label="Aoi Theme"
+                onClick={() => setTheme('nanohana')} 
+                className={`theme-dot theme-dot-nanohana ${theme === 'nanohana' ? 'active' : ''}`}
+                aria-label="Nanohana Theme"
               />
               <button 
                 onClick={() => setTheme('momiji')} 
@@ -296,8 +296,8 @@ export const Header: React.FC = () => {
           background-color: #6A8372;
         }
         
-        .theme-dot-aoi {
-          background-color: #0089A7;
+        .theme-dot-nanohana {
+          background-color: #E6C35C;
         }
         
         .theme-dot-momiji {
