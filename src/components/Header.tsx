@@ -19,6 +19,9 @@ export const YoutubeIcon = ({ className }: { className?: string }) => (
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [theme, setTheme] = useState<string>(() => {
+    return localStorage.getItem('theme') || 'default';
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +30,15 @@ export const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (theme === 'default') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const menuItems = [
     { name: 'Home', href: '#home' },
@@ -78,6 +90,28 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
+          {/* デスクトップ用テーマセレクター */}
+          <div className="hidden md:flex items-center gap-3 mr-4 theme-selector-container">
+            <button 
+              onClick={() => setTheme('default')} 
+              className={`theme-dot theme-dot-default ${theme === 'default' ? 'active' : ''}`}
+              title="デフォルト（深夜）"
+              aria-label="Default Theme"
+            />
+            <button 
+              onClick={() => setTheme('matcha')} 
+              className={`theme-dot theme-dot-matcha ${theme === 'matcha' ? 'active' : ''}`}
+              title="抹茶"
+              aria-label="Matcha Theme"
+            />
+            <button 
+              onClick={() => setTheme('aoi')} 
+              className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
+              title="蒼"
+              aria-label="Aoi Theme"
+            />
+          </div>
+
           {/* デスクトップSNSリンク */}
           <div className="hidden md:flex items-center gap-4">
             <a href="https://youtube.com/channel/UCjYzaIL8YhXh671FyjcYikg" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-400 transition-colors">
@@ -86,6 +120,25 @@ export const Header: React.FC = () => {
             <a href="mailto:ushi.54.log@gmail.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
               <MailIcon className="w-5 h-5" />
             </a>
+          </div>
+
+          {/* モバイル用テーマセレクター */}
+          <div className="flex md:hidden items-center gap-3 mr-3">
+            <button 
+              onClick={() => setTheme('default')} 
+              className={`theme-dot theme-dot-default ${theme === 'default' ? 'active' : ''}`}
+              aria-label="Default Theme"
+            />
+            <button 
+              onClick={() => setTheme('matcha')} 
+              className={`theme-dot theme-dot-matcha ${theme === 'matcha' ? 'active' : ''}`}
+              aria-label="Matcha Theme"
+            />
+            <button 
+              onClick={() => setTheme('aoi')} 
+              className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
+              aria-label="Aoi Theme"
+            />
           </div>
 
           {/* モバイルメニューボタン */}
@@ -126,6 +179,26 @@ export const Header: React.FC = () => {
               <a href="mailto:ushi.54.log@gmail.com" className="text-slate-400 hover:text-white transition-colors" aria-label="Contact">
                 <MailIcon className="w-6 h-6" />
               </a>
+            </div>
+
+            {/* モバイルメニュー内部用テーマセレクター */}
+            <div className="flex items-center gap-4 mt-6 px-4 py-2 bg-slate-900/40 rounded-full border border-white/5">
+              <span className="text-xs text-slate-500 font-serif mr-1">Theme</span>
+              <button 
+                onClick={() => setTheme('default')} 
+                className={`theme-dot theme-dot-default ${theme === 'default' ? 'active' : ''}`}
+                aria-label="Default Theme"
+              />
+              <button 
+                onClick={() => setTheme('matcha')} 
+                className={`theme-dot theme-dot-matcha ${theme === 'matcha' ? 'active' : ''}`}
+                aria-label="Matcha Theme"
+              />
+              <button 
+                onClick={() => setTheme('aoi')} 
+                className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
+                aria-label="Aoi Theme"
+              />
             </div>
           </motion.div>
         )}
@@ -190,6 +263,60 @@ export const Header: React.FC = () => {
           width: 24px;
           height: 24px;
         }
+
+        /* テーマセレクタードット */
+        .theme-selector-container {
+          background: rgba(255, 255, 255, 0.02);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          padding: 6px 12px;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+        }
+
+        .theme-dot {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          padding: 0;
+          outline: none;
+        }
+        
+        .theme-dot-default {
+          background-color: #336774;
+        }
+        
+        .theme-dot-matcha {
+          background-color: #6A8372;
+        }
+        
+        .theme-dot-aoi {
+          background-color: #0089A7;
+        }
+        
+        .theme-dot:hover {
+          transform: scale(1.25);
+          border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .theme-dot.active {
+          transform: scale(1.15);
+          border-color: #ffffff;
+          box-shadow: 0 0 8px var(--primary);
+        }
+        
+        .mr-2 { margin-right: 8px; }
+        .mr-3 { margin-right: 12px; }
+        .mr-4 { margin-right: 16px; }
+        .px-4 { padding-left: 16px; padding-right: 16px; }
+        .py-2 { padding-top: 8px; padding-bottom: 8px; }
+        .mt-6 { margin-top: 24px; }
+        .rounded-full { border-radius: 9999px; }
+        .bg-slate-900\\/40 { background-color: rgba(15, 23, 42, 0.4); }
+        .border-white\\/5 { border-color: rgba(255, 255, 255, 0.05); }
       `}</style>
     </>
   );

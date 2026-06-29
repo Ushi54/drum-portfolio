@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Shippori+Mincho+B1:wght@400;700&display=swap');
 
 :root {
-  /* 落ち着いたアッシュ＆ウォーターカラーシステム */
+  /* デフォルト：落ち着いたアッシュ＆ウォーターカラーシステム (深夜・ドラム) */
   --bg-dark: #08192D;      /* 深いミッドナイトブルー */
+  --bg-gradient-start: #0e273e;
+  --bg-gradient-end: #08192D;
   --bg-card: rgba(20, 27, 33, 0.55);
   --bg-card-hover: rgba(29, 39, 48, 0.7);
   --primary: #336774;      /* ユーザーお気に入りの淡い鴨の羽色・スレートブルー */
@@ -19,6 +21,30 @@
 
   /* イージング・トランジション */
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="matcha"] {
+  --bg-dark: #111814;
+  --bg-gradient-start: #1c2620;
+  --bg-gradient-end: #111814;
+  --primary: #6A8372;      /* 主要色: 抹茶グリーン */
+  --accent-soft: #6C6A2D;   /* アクセント: オリーブ */
+  --secondary: #877F6C;     /* サブカラー: アッシュベージュ */
+  --bg-card: rgba(25, 30, 27, 0.55);
+  --bg-card-hover: rgba(35, 42, 38, 0.7);
+  --border-focus: rgba(106, 131, 114, 0.25);
+}
+
+html[data-theme="aoi"] {
+  --bg-dark: #05131a;
+  --bg-gradient-start: #0b222d;
+  --bg-gradient-end: #05131a;
+  --primary: #0089A7;      /* 主要色: 蒼・シアン */
+  --accent-soft: #66BAB7;   /* アクセント: 水色 */
+  --secondary: #006284;     /* サブカラー: 深青 */
+  --bg-card: rgba(15, 26, 32, 0.55);
+  --bg-card-hover: rgba(23, 37, 45, 0.7);
+  --border-focus: rgba(0, 137, 167, 0.25);
 }
 
 * {
@@ -86,7 +112,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: -2;
-  background: radial-gradient(circle at 50% 50%, #0e273e 0%, #08192D 100%);
+  background: radial-gradient(circle at 50% 50%, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
   overflow: hidden;
 }
 
@@ -97,8 +123,8 @@ a {
   width: 200%;
   height: 200%;
   background: 
-    radial-gradient(circle at 25% 25%, rgba(51, 103, 116, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(92, 123, 140, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, var(--border-focus) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.015) 0%, transparent 50%);
   animation: rotateRipple 50s linear infinite;
   transform-origin: center center;
 }
