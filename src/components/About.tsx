@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 import { Music, Info, Star } from 'lucide-react';
 export const About: React.FC = () => {
   const favoriteArtists = [
-    { name: 'ヨルシカ', url: 'https://music.apple.com/artist/id1252062635' },
-    { name: 'ずっと真夜中でいいのに。', url: 'https://music.apple.com/artist/id1415664188' },
-    { name: 'NoisyCell', url: 'https://music.apple.com/artist/id1440058564' },
-    { name: 'Fall Out Boy', url: 'https://music.apple.com/artist/id3344685' },
-    { name: 'Polyphia', url: 'https://music.apple.com/artist/id640828340' },
-    { name: 'Fear, and Loathing in Las Vegas', url: 'https://music.apple.com/artist/id387401340' },
-    { name: 'the band apart', url: 'https://music.apple.com/artist/id78726207' },
-    { name: 'harha', url: 'https://music.apple.com/artist/id1647414902' },
-    { name: 'mabanua', url: 'https://music.apple.com/artist/id291537646' },
-    { name: 'supercell', url: 'https://music.apple.com/artist/id325514619' },
-    { name: 'haruka nakamura', url: 'https://music.apple.com/artist/id296535560' }
+    { name: 'ヨルシカ', url: 'https://www.youtube.com/@nbuna' },
+    { name: 'ずっと真夜中でいいのに。', url: 'https://www.youtube.com/@ZUTOMAYO' },
+    { name: 'NoisyCell', url: 'https://www.youtube.com/@noisycell' },
+    { name: 'Fall Out Boy', url: 'https://www.youtube.com/@falloutboy' },
+    { name: 'Polyphia', url: 'https://www.youtube.com/@Polyphia' },
+    { name: 'Fear, and Loathing in Las Vegas', url: 'https://www.youtube.com/@fearandloathinginlasvegas9431' },
+    { name: 'the band apart', url: 'https://www.youtube.com/@asiangothiclabel' },
+    { name: 'harha', url: 'https://www.youtube.com/@harha868' },
+    { name: 'mabanua', url: 'https://www.youtube.com/@mabanua_official' },
+    { name: 'supercell', url: 'https://www.youtube.com/@spclryo2673' },
+    { name: 'haruka nakamura', url: 'https://www.youtube.com/@harukanakamura_' }
   ];
 
   // 詳細・整理された正確な愛用機材データ
