@@ -13,7 +13,15 @@ export const About: React.FC = () => {
     { name: 'harha', url: 'https://www.youtube.com/@harha868' },
     { name: 'mabanua', url: 'https://www.youtube.com/@mabanua_official' },
     { name: 'supercell', url: 'https://www.youtube.com/@spclryo2673' },
-    { name: 'haruka nakamura', url: 'https://www.youtube.com/@harukanakamura_' }
+    { name: 'haruka nakamura', url: 'https://www.youtube.com/@harukanakamura_' },
+    { name: '有形ランペイジ', url: 'https://www.youtube.com/@sasakureUK0211' },
+    { name: 'DECO*27', url: 'https://www.youtube.com/@DECO27' },
+    { name: 'HoneyWorks', url: 'https://www.youtube.com/@HoneyWorksOFFICIAL' },
+    { name: 'ONE OK ROCK', url: 'https://www.youtube.com/@ONEOKROCK' },
+    { name: 'RADWIMPS', url: 'https://www.youtube.com/@RADWIMPS_official' },
+    { name: 'UNISON SQUARE GARDEN', url: 'https://www.youtube.com/@unisonsgofficial' },
+    { name: 'CHiCO with HoneyWorks', url: 'https://www.youtube.com/@chicoxxx' },
+    { name: 'SANOVA', url: 'https://www.youtube.com/@SANOVA-Official' }
   ];
 
   // 詳細・整理された正確な愛用機材データ
