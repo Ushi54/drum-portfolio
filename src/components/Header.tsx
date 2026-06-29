@@ -110,6 +110,12 @@ export const Header: React.FC = () => {
               title="蒼"
               aria-label="Aoi Theme"
             />
+            <button 
+              onClick={() => setTheme('momiji')} 
+              className={`theme-dot theme-dot-momiji ${theme === 'momiji' ? 'active' : ''}`}
+              title="紅葉"
+              aria-label="Momiji Theme"
+            />
           </div>
 
           {/* デスクトップSNSリンク */}
@@ -138,6 +144,11 @@ export const Header: React.FC = () => {
               onClick={() => setTheme('aoi')} 
               className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
               aria-label="Aoi Theme"
+            />
+            <button 
+              onClick={() => setTheme('momiji')} 
+              className={`theme-dot theme-dot-momiji ${theme === 'momiji' ? 'active' : ''}`}
+              aria-label="Momiji Theme"
             />
           </div>
 
@@ -198,6 +209,11 @@ export const Header: React.FC = () => {
                 onClick={() => setTheme('aoi')} 
                 className={`theme-dot theme-dot-aoi ${theme === 'aoi' ? 'active' : ''}`}
                 aria-label="Aoi Theme"
+              />
+              <button 
+                onClick={() => setTheme('momiji')} 
+                className={`theme-dot theme-dot-momiji ${theme === 'momiji' ? 'active' : ''}`}
+                aria-label="Momiji Theme"
               />
             </div>
           </motion.div>
@@ -295,6 +311,10 @@ export const Header: React.FC = () => {
         
         .theme-dot-aoi {
           background-color: #0089A7;
+        }
+        
+        .theme-dot-momiji {
+          background-color: #8E354A;
         }
         
         .theme-dot:hover {

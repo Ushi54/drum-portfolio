@@ -47,6 +47,18 @@ html[data-theme="aoi"] {
   --border-focus: rgba(0, 137, 167, 0.25);
 }
 
+html[data-theme="momiji"] {
+  --bg-dark: #170b0e;
+  --bg-gradient-start: #241116;
+  --bg-gradient-end: #170b0e;
+  --primary: #8E354A;      /* 主要色: 紅・つづじ */
+  --accent-soft: #AB3B3A;   /* アクセント: 朱赤 */
+  --secondary: #B54434;     /* サブカラー: 紅葉オレンジ */
+  --bg-card: rgba(32, 20, 23, 0.55);
+  --bg-card-hover: rgba(45, 29, 33, 0.7);
+  --border-focus: rgba(142, 53, 74, 0.25);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
