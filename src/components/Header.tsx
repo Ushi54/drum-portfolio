@@ -20,7 +20,9 @@ export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState<string>(() => {
-    return localStorage.getItem('theme') || 'default';
+    const themes = ['default', 'matcha', 'nanohana', 'momiji', 'monochrome'];
+    const randomIndex = Math.floor(Math.random() * themes.length);
+    return themes[randomIndex];
   });
 
   useEffect(() => {
@@ -37,7 +39,6 @@ export const Header: React.FC = () => {
     } else {
       document.documentElement.setAttribute('data-theme', theme);
     }
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const menuItems = [
