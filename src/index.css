@@ -15,6 +15,12 @@
   --border-color: rgba(255, 255, 255, 0.04);
   --border-focus: rgba(51, 103, 116, 0.25);
   
+  /* ニューモーフィズム用変数 */
+  --nm-bg: #08192D;
+  --nm-text: #e6ebed;
+  --nm-shadow-dark: #040d17;
+  --nm-shadow-light: #0d2745;
+  
   /* フォントスタック */
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Shippori Mincho B1', serif;
@@ -33,6 +39,12 @@ html[data-theme="matcha"] {
   --bg-card: rgba(25, 30, 27, 0.55);
   --bg-card-hover: rgba(35, 42, 38, 0.7);
   --border-focus: rgba(106, 131, 114, 0.25);
+  
+  /* ニューモーフィズム用変数 */
+  --nm-bg: #111814;
+  --nm-text: #e6ebed;
+  --nm-shadow-dark: #080c0a;
+  --nm-shadow-light: #1b251f;
 }
 
 html[data-theme="nanohana"] {
@@ -45,6 +57,12 @@ html[data-theme="nanohana"] {
   --bg-card: rgba(28, 25, 20, 0.55);
   --bg-card-hover: rgba(38, 34, 27, 0.7);
   --border-focus: rgba(230, 195, 92, 0.25);
+  
+  /* ニューモーフィズム用変数 */
+  --nm-bg: #12110d;
+  --nm-text: #e6ebed;
+  --nm-shadow-dark: #090806;
+  --nm-shadow-light: #1c1b14;
 }
 
 html[data-theme="momiji"] {
@@ -57,6 +75,12 @@ html[data-theme="momiji"] {
   --bg-card: rgba(32, 20, 23, 0.55);
   --bg-card-hover: rgba(45, 29, 33, 0.7);
   --border-focus: rgba(142, 53, 74, 0.25);
+  
+  /* ニューモーフィズム用変数 */
+  --nm-bg: #170b0e;
+  --nm-text: #e6ebed;
+  --nm-shadow-dark: #0b0507;
+  --nm-shadow-light: #241116;
 }
 
 html[data-theme="monochrome"] {
@@ -69,6 +93,12 @@ html[data-theme="monochrome"] {
   --bg-card: rgba(22, 22, 22, 0.6);
   --bg-card-hover: rgba(38, 38, 38, 0.75);
   --border-focus: rgba(255, 255, 255, 0.25);
+  
+  /* ニューモーフィズム用変数 */
+  --nm-bg: #090909;
+  --nm-text: #ffffff;
+  --nm-shadow-dark: #000000;
+  --nm-shadow-light: #161616;
 }
 
 * {
@@ -227,3 +257,90 @@ a {
   color: var(--text-primary);
   transform: translateY(-1px);
 }
+
+/* 背景色に合わせたニューモーフィズム */
+.bnto-btn-neumorphic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--nm-text);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 16px;
+  box-shadow: 6px 6px 12px var(--nm-shadow-dark),
+              -6px -6px 12px var(--nm-shadow-light);
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+.bnto-btn-neumorphic:active {
+  box-shadow: inset 4px 4px 8px var(--nm-shadow-dark),
+              inset -4px -4px 8px var(--nm-shadow-light);
+  transform: scale(0.98);
+}
+
+/* タイピングアニメーション (1回のみ再生、フォントは元のまま、中央ズレ防止版) */
+.bnto-text-typing {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  font-family: inherit; /* フォントは元のまま */
+  color: var(--text-primary); /* 文字色は白を維持 */
+  clip-path: inset(0 100% 0 0); /* 最初は非表示 */
+  animation: bnto-typing-clip 2.5s steps(23) forwards;
+}
+
+/* キャレット（カーソル）用の疑似要素 */
+.bnto-text-typing::after {
+  content: '';
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  right: 100%; /* 最初は左端 */
+  width: 3px;
+  background-color: var(--primary);
+  opacity: 0; /* アニメーション終了後は非表示 */
+  animation: bnto-caret-move 2.5s steps(23) forwards,
+             bnto-caret-blink 0.6s step-end 4;
+}
+
+@keyframes bnto-typing-clip {
+  to { clip-path: inset(0 0 0 0); } /* 全表示 */
+}
+
+@keyframes bnto-caret-move {
+  to { right: 0; } /* 右端まで移動 */
+}
+
+@keyframes bnto-caret-blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* グリッチエフェクト */
+.bnto-text-glitch {
+  --g1: hsl(202 73% 56%);
+  --g2: hsl(338 73% 56%);
+  color: #2A2622;
+  font-weight: 900;
+  animation: bnto-glitch 1.1s steps(2) infinite;
+}
+@keyframes bnto-glitch {
+  0%, 100% {
+    text-shadow: 2px 0 var(--g1), -2px 0 var(--g2);
+    filter: drop-shadow(2px 0 var(--g1)) drop-shadow(-2px 0 var(--g2));
+  }
+  25% {
+    text-shadow: -2px 0 var(--g1), 2px 0 var(--g2);
+    filter: drop-shadow(-2px 0 var(--g1)) drop-shadow(2px 0 var(--g2));
+  }
+  50% {
+    text-shadow: 2px 2px var(--g1), -2px -2px var(--g2);
+    filter: drop-shadow(2px 2px var(--g1)) drop-shadow(-2px -2px var(--g2));
+  }
+}
+

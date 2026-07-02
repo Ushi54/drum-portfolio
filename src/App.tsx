@@ -87,8 +87,8 @@ function App() {
             transition={{ duration: 0.8 }}
             className="hero-badge"
           >
-            <Drum className="w-4 h-4 animate-spin-slow" style={{ color: 'var(--primary)' }} />
-            <span>Drummer Portfolio</span>
+            <Drum className="w-4 h-4 animate-spin-slow bnto-text-glitch" style={{ color: '#ffffff' }} />
+            <span className="bnto-text-glitch">Drummer Portfolio</span>
           </motion.div>
 
           <motion.h1
@@ -97,7 +97,7 @@ function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hero-title font-serif"
           >
-            Usshi's Drum <span className="text-gradient">Portfolio.</span>
+            <span className="bnto-text-typing">Usshi's Drum Portfolio.</span>
           </motion.h1>
 
           <motion.p
@@ -113,13 +113,16 @@ function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="hero-buttons flex justify-center gap-4 mt-10"
+            className="hero-buttons flex justify-center gap-6 mt-10"
           >
-            <button onClick={handleScrollToAbout} className="btn-primary">
+            <button onClick={handleScrollToAbout} className="bnto-btn-neumorphic">
               About Me
             </button>
-            <a href="#works" className="btn-secondary">
+            <a href="#works" className="bnto-btn-neumorphic">
               My Works
+            </a>
+            <a href="#links" className="bnto-btn-neumorphic">
+              Links
             </a>
           </motion.div>
         </div>
@@ -207,8 +210,8 @@ function App() {
           gap: 12px;
           padding: 6px 16px;
           border-radius: 2px;
-          background-color: rgba(13, 18, 22, 0.4);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background-color: transparent;
+          border: none;
           color: #cbd5e1;
           font-size: 0.875rem;
           margin-bottom: 24px;
@@ -238,6 +241,7 @@ function App() {
           margin-top: 40px;
           display: flex;
           justify-content: center;
+          flex-wrap: wrap;
           gap: 16px;
         }
 
@@ -267,6 +271,24 @@ function App() {
           50% {
             transform: translateY(-25%);
             animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+
+        /* スマホ表示時の余白・フォントサイズ調整 */
+        @media (max-width: 480px) {
+          .hero-section {
+            padding: 0 20px;
+          }
+          .hero-title {
+            /* 画面幅に合わせてはみ出さない限界までフォントサイズを拡大 */
+            font-size: clamp(1.35rem, 6.8vw, 2.2rem);
+            letter-spacing: 0.02em;
+          }
+          .hero-desc {
+            /* 画面端に張り付かないように左右パディングを追加 */
+            font-size: 0.9rem;
+            padding: 0 12px;
+            line-height: 1.6;
           }
         }
       `}</style>
