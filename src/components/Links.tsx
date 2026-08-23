@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, BookOpen } from 'lucide-react';
 import { YoutubeIcon } from './Header';
 
 const InstagramIcon = ({ className }: { className?: string }) => (
@@ -94,6 +94,14 @@ export const Links: React.FC = () => {
       description: '基本インスタの投稿が投稿されます。',
       color: '#687882',
       glowColor: 'rgba(104, 120, 130, 0.15)',
+    },
+    {
+      name: 'note',
+      url: 'https://note.com/ushi5432',
+      icon: <BookOpen className="w-7 h-7" />,
+      description: '日々の思考、学んだこと、エンジニアとしての気づきなどをテキストで発信しています。',
+      color: '#2cb696',
+      glowColor: 'rgba(44, 182, 150, 0.15)',
     },
   ];
 
