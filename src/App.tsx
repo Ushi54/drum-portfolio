@@ -5,7 +5,10 @@ import { YoutubeCard } from './components/YoutubeCard';
 import { About } from './components/About';
 import { Links } from './components/Links';
 import { Footer } from './components/Footer';
-import { ChevronDown, Drum } from 'lucide-react';
+import { Applications } from './components/Applications';
+import { ChevronDown, Drum, BookOpen } from 'lucide-react';
+import { TwitterIcon, InstagramIcon } from './components/Links';
+import { YoutubeIcon } from './components/Header';
 
 function App() {
   const handleScrollToAbout = () => {
@@ -118,11 +121,11 @@ function App() {
             <button onClick={handleScrollToAbout} className="bnto-btn-neumorphic">
               About Me
             </button>
-            <a href="#works" className="bnto-btn-neumorphic">
-              My Works
+            <a href="#applications" className="bnto-btn-neumorphic">
+              Apps
             </a>
-            <a href="#links" className="bnto-btn-neumorphic">
-              Links
+            <a href="#works" className="bnto-btn-neumorphic">
+              Works
             </a>
           </motion.div>
         </div>
@@ -131,7 +134,7 @@ function App() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer flex flex-col items-center gap-2 text-slate-400 hover:text-white"
           onClick={handleScrollToAbout}
         >
@@ -140,10 +143,23 @@ function App() {
         </motion.div>
       </section>
 
-      {/* 2. About セクション */}
+      {/* 2. Links / Contact セクション (トップの直後) */}
+      <Links />
+
+      {/* 3. Applications (作成したアプリケーション) セクション */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.8 }}
+      >
+        <Applications />
+      </motion.div>
+
+      {/* 4. About セクション */}
       <About />
 
-      {/* 3. Works / YouTube セクション */}
+      {/* 5. Works / YouTube セクション */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -152,9 +168,6 @@ function App() {
       >
         <YoutubeCard />
       </motion.div>
-
-      {/* 4. Links / Contact セクション */}
-      <Links />
 
       {/* フッター */}
       <Footer />
@@ -243,6 +256,24 @@ function App() {
           justify-content: center;
           flex-wrap: wrap;
           gap: 16px;
+        }
+
+        .hero-social-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          transition: all 0.3s ease;
+        }
+
+        .hero-social-icon:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-3px);
+          border-color: rgba(255, 255, 255, 0.2);
         }
 
         .absolute { position: absolute; }

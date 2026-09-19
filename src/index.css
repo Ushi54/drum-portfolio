@@ -18,8 +18,8 @@
   /* ニューモーフィズム用変数 */
   --nm-bg: #08192D;
   --nm-text: #e6ebed;
-  --nm-shadow-dark: #040d17;
-  --nm-shadow-light: #0d2745;
+  --nm-shadow-dark: #030a12;
+  --nm-shadow-light: rgba(255, 255, 255, 0.05);
   
   /* フォントスタック */
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -43,8 +43,8 @@ html[data-theme="matcha"] {
   /* ニューモーフィズム用変数 */
   --nm-bg: #111814;
   --nm-text: #e6ebed;
-  --nm-shadow-dark: #080c0a;
-  --nm-shadow-light: #1b251f;
+  --nm-shadow-dark: #060907;
+  --nm-shadow-light: rgba(255, 255, 255, 0.04);
 }
 
 html[data-theme="nanohana"] {
@@ -61,8 +61,8 @@ html[data-theme="nanohana"] {
   /* ニューモーフィズム用変数 */
   --nm-bg: #12110d;
   --nm-text: #e6ebed;
-  --nm-shadow-dark: #090806;
-  --nm-shadow-light: #1c1b14;
+  --nm-shadow-dark: #070605;
+  --nm-shadow-light: rgba(255, 255, 255, 0.04);
 }
 
 html[data-theme="momiji"] {
@@ -79,8 +79,8 @@ html[data-theme="momiji"] {
   /* ニューモーフィズム用変数 */
   --nm-bg: #170b0e;
   --nm-text: #e6ebed;
-  --nm-shadow-dark: #0b0507;
-  --nm-shadow-light: #241116;
+  --nm-shadow-dark: #090405;
+  --nm-shadow-light: rgba(255, 255, 255, 0.04);
 }
 
 html[data-theme="monochrome"] {
@@ -98,7 +98,7 @@ html[data-theme="monochrome"] {
   --nm-bg: #090909;
   --nm-text: #ffffff;
   --nm-shadow-dark: #000000;
-  --nm-shadow-light: #161616;
+  --nm-shadow-light: rgba(255, 255, 255, 0.06);
 }
 
 * {
