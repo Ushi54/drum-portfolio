@@ -1,413 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Music, Info, Star } from 'lucide-react';
-export const About: React.FC = () => {
-  const favoriteArtists = [
-    { name: 'ヨルシカ', url: 'https://www.youtube.com/@nbuna' },
-    { name: 'ずっと真夜中でいいのに。', url: 'https://www.youtube.com/@ZUTOMAYO' },
-    { name: 'NoisyCell', url: 'https://www.youtube.com/@noisycell' },
-    { name: 'Fall Out Boy', url: 'https://www.youtube.com/@falloutboy' },
-    { name: 'Polyphia', url: 'https://www.youtube.com/@Polyphia' },
-    { name: 'Fear, and Loathing in Las Vegas', url: 'https://www.youtube.com/@fearandloathinginlasvegas9431' },
-    { name: 'the band apart', url: 'https://www.youtube.com/@asiangothiclabel' },
-    { name: 'harha', url: 'https://www.youtube.com/@harha868' },
-    { name: 'mabanua', url: 'https://www.youtube.com/@mabanua_official' },
-    { name: 'supercell', url: 'https://www.youtube.com/@spclryo2673' },
-    { name: 'haruka nakamura', url: 'https://www.youtube.com/@harukanakamura_' },
-    { name: '有形ランペイジ', url: 'https://www.youtube.com/@sasakureUK0211' },
-    { name: 'DECO*27', url: 'https://www.youtube.com/@DECO27' },
-    { name: 'HoneyWorks', url: 'https://www.youtube.com/@HoneyWorksOFFICIAL' },
-    { name: 'ONE OK ROCK', url: 'https://www.youtube.com/@ONEOKROCK' },
-    { name: 'RADWIMPS', url: 'https://www.youtube.com/@RADWIMPS_official' },
-    { name: 'UNISON SQUARE GARDEN', url: 'https://www.youtube.com/@unisonsgofficial' },
-    { name: 'CHiCO with HoneyWorks', url: 'https://www.youtube.com/@chicoxxx' },
-    { name: 'SANOVA', url: 'https://www.youtube.com/@SANOVA-Official' }
-  ];
+import { avatarUrl, bio, gear, inspirations, playStyles } from '../data/profile';
+import { Section } from './Section';
 
-  // 詳細・整理された正確な愛用機材データ
-  const gearCategories = [
-    {
-      title: 'Acoustic Drums',
-      items: [
-        'Yamaha RBS1455 (Snare 14"×5.5")',
-        'Yamaha FP9C (Bass Pedal)',
-        'Zildjian 漢家兒 18" (China)',
-        '小出 808 Splash 8"',
-        'Pearl 110HC (Sticks)'
-      ]
-    },
-    {
-      title: 'E-Drums',
-      items: [
-        'Roland TD713SC-S (E-Drums)'
-      ]
-    },
-    {
-      title: 'Camera & Optics',
-      items: [
-        'Canon EOS Kiss M',
-        'EF-M22mm F2 STM (Lens)'
-      ]
-    },
-    {
-      title: 'Creative Software',
-      items: [
-        'Logic Pro (DAW)',
-        'Final Cut Pro X (Video)'
-      ]
-    }
-  ];
-
-  // ユーザー様との対話から設定した星5段階の強み・プレイスタイル
-  const drummingStrengths = [
-    { name: 'J-Rock / Vocaloid / Anime', rating: 5, note: '得意ジャンル・動画投稿多数' },
-    { name: 'Live Performance', rating: 5, note: '自分がステージで一番楽しむ＆楽しませる！' },
-    { name: 'Groove & Space (余白と空気感)', rating: 4, note: '楽曲を引き立てるリズムの「間」' },
-    { name: 'Tone & Tuning (音作り)', rating: 4, note: 'Yamaha × Zildjian × 小出 などの組み合わせ' },
-    { name: 'Jazz / Instrumental', rating: 2, note: '挑戦中・絶賛練習強化中！☕' },
-  ];
-
-  return (
-    <section id="about" className="section-container">
-      <div className="text-center mb-16">
-        <h2 className="section-title">About Me</h2>
-      </div>
-
-      <div className="about-grid">
-        {/* 左側：プロフィール概要 */}
-        <motion.div 
-          className="glass-panel profile-card"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="avatar-container">
-            <img 
-              src="https://ugc.production.linktr.ee/fb5396ce-df03-4e1d-baac-b481b681f767_IMG-0483.jpeg?io=true&size=avatar-v3_0" 
-              alt="うっしー" 
-              className="avatar-img"
-            />
-          </div>
-          <h3 className="profile-name font-serif text-2xl text-white mt-6">うっしー</h3>
-          <p className="profile-title text-gradient font-bold mt-1">Drummer</p>
-          
-          <p className="profile-bio text-slate-300 mt-6 leading-relaxed text-sm">
-            15歳からドラムを始め、YouTubeのレッスン動画などを参考に独学でスキルを磨いてきました。
-            ボカロ、ロック、アニソンなど幅広いジャンルをカバーし、ドラムカバーやコラボ演奏動画の投稿、
-            楽曲でのドラム担当、および自身の所属バンド「schirm. (シルム)」での活動を行っています。
-          </p>
-          <p className="profile-bio text-slate-300 mt-4 leading-relaxed text-sm">
-            プレイスタイルで最も大切にしているのは、ただ正確に叩くことではなく、体全体で音楽を楽しみ、観てくれる人とその熱量を共有すること。
-            特にアップテンポな楽曲でのダイナミックなパフォーマンスを得意としており、演奏後にオーディエンスから「本当に楽しそうに叩くね！」と声をかけてもらう瞬間が、ドラマーとして一番の喜びです。
-          </p>
-
-          <p className="profile-bio text-slate-300 mt-4 leading-relaxed text-sm">
-            周りからいただく評価に感謝しつつも、技量においてはまだまだ発展途上。
-            もっと多くの人と一緒に素晴らしいパフォーマンスを作り上げるため、日々ストイックにドラムと向き合い、技術を磨き続けています。
-          </p>
-        </motion.div>
-
-        {/* 右側：ドラム特性や使用機材 */}
-        <div className="skill-column">
-          {/* プレイスタイルの特徴 (星5つ評価) */}
-          <motion.div 
-            className="glass-panel"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="card-sub-title font-serif text-white mb-6 flex items-center gap-2">
-              <Music className="w-5 h-5" style={{ color: 'var(--primary)' }} />
-              Play Style & Focus
-            </h4>
-            <div className="skill-bars">
-              {drummingStrengths.map((strength) => (
-                <div key={strength.name} className="skill-bar-item">
-                  <div className="flex justify-between items-start">
-                    <div className="info-area">
-                      <span className="font-serif text-sm text-slate-200 block">{strength.name}</span>
-                      {strength.note && (
-                        <span className="text-xxs text-slate-500 font-sans mt-1 block">{strength.note}</span>
-                      )}
-                    </div>
-                    {/* 星レーティング */}
-                    <div className="flex gap-1 items-center rating-stars">
-                      {[...Array(5)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="w-4 h-4 star-icon" 
-                          style={{ 
-                            color: i < strength.rating ? 'var(--primary)' : '#1b2631',
-                            fill: i < strength.rating ? 'var(--primary)' : 'transparent',
-                          }} 
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* 使用機材 ＆ アーティスト */}
-          <motion.div 
-            className="glass-panel"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h4 className="card-sub-title font-serif text-white mb-6 flex items-center gap-2">
-              <Info className="w-5 h-5" style={{ color: 'var(--primary)' }} />
-              Gear & Favorites
-            </h4>
-            
-            <div className="gear-wrapper">
-              <p className="about-section-label">My Gear</p>
-              <div className="gear-categories-grid">
-                {gearCategories.map((category) => (
-                  <div key={category.title} className="gear-category-block">
-                    <p className="gear-category-subtitle font-serif text-slate-300 mb-2">{category.title}</p>
-                    <ul className="text-xs text-slate-400 leading-relaxed list-none pl-0 mb-0">
-                      {category.items.map((item) => (
-                        <li key={item} className="mb-1 flex items-start gap-1">
-                          <span className="bullet-point">・</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Inspirations用コンテナ（個別にpaddingを設定） */}
-            <div className="inspirations-container">
-              <p className="about-section-label">Inspirations</p>
-              <div className="flex flex-wrap gap-2">
-                {favoriteArtists.map((artist) => (
-                  <a 
-                    key={artist.name} 
-                    href={artist.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="skill-badge artist-badge"
-                  >
-                    {artist.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+export const About = () => (
+  <Section id="about" title="うっしーについて">
+    <div className="grid gap-10 md:grid-cols-[1fr_1fr]">
+      <div>
+        <img src={avatarUrl} alt="うっしー" className="size-24 rounded-full border-2 border-line object-cover" />
+        <div className="mt-6 max-w-prose space-y-4">
+          {bio.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
         </div>
       </div>
-      <style>{`
-        #about {
-          padding-bottom: 120px;
-        }
 
-        .about-grid {
-          display: grid;
-          grid-template-columns: 1.2fr 1.8fr;
-          gap: 32px;
-          align-items: start;
-        }
+      <div className="space-y-8">
+        <div>
+          <h3 className="mb-3 text-lg font-bold">得意なこと</h3>
+          <ul className="space-y-3">
+            {playStyles.map((s) => (
+              <li key={s.name}>
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="font-medium">{s.name}</span>
+                  <span className="sr-only">5段階中{s.level}</span>
+                  <span aria-hidden className="flex gap-1">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <span key={i} className={`size-2.5 rounded-full ${i < s.level ? 'bg-accent' : 'bg-line'}`} />
+                    ))}
+                  </span>
+                </div>
+                <p className="text-sm text-muted">{s.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        @media (max-width: 900px) {
-          .about-grid {
-            grid-template-columns: 1fr;
-          }
-          .skill-column {
-            margin-bottom: 32px;
-          }
-        }
+        <div>
+          <h3 className="mb-3 text-lg font-bold">機材</h3>
+          <dl className="space-y-3 rounded-xl bg-panel p-6">
+            {gear.map((g) => (
+              <div key={g.category} className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
+                <dt className="text-sm text-muted">{g.category}</dt>
+                <dd className="text-sm">
+                  <ul>
+                    {g.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
 
-        .profile-card {
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 40px 32px;
-        }
-
-        .skill-column .glass-panel {
-          padding: 32px;
-          margin-bottom: 24px;
-        }
-
-        .skill-column .glass-panel:last-child {
-          margin-bottom: 0;
-        }
-
-        @media (max-width: 600px) {
-          .profile-card {
-            padding: 32px 20px;
-          }
-          .skill-column .glass-panel {
-            padding: 24px 20px;
-          }
-        }
-
-        .avatar-container {
-          width: 110px;
-          height: 110px;
-          border-radius: 50%;
-          overflow: hidden;
-          border: 1px solid rgba(51, 103, 116, 0.4);
-          box-shadow: 0 0 15px rgba(51, 103, 116, 0.15);
-        }
-
-        .avatar-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .profile-bio {
-          text-align: left;
-          padding: 8px 4px;
-        }
-
-        .card-sub-title {
-          font-size: 1.15rem;
-          margin-bottom: 18px;
-        }
-
-        .gear-wrapper {
-          margin-bottom: 40px;
-        }
-
-        .about-section-label {
-          font-size: 0.75rem;
-          color: #8799a3;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          margin-bottom: 12px;
-        }
-
-        .skill-badge {
-          font-size: 0.75rem;
-          padding: 6px 12px;
-          border-radius: 2px;
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.04);
-          color: #8799a3;
-          text-decoration: none;
-          display: inline-block;
-          cursor: pointer;
-          transition: all 0.4s ease;
-        }
-
-        .artist-badge:hover {
-          background: rgba(51, 103, 116, 0.08);
-          border-color: rgba(51, 103, 116, 0.3);
-          color: #e6ebed;
-          transform: translateY(-1px);
-        }
-
-        .flex-wrap {
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .skill-bars {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .skill-bar-item {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-          padding-bottom: 12px;
-        }
-
-        .skill-bar-item:last-child {
-          border-bottom: none;
-          padding-bottom: 0;
-        }
-
-        .rating-stars {
-          flex-shrink: 0;
-        }
-
-        .star-icon {
-          stroke-width: 1.5;
-        }
-
-        .info-area {
-          flex-grow: 1;
-          padding-right: 16px;
-        }
-
-        .bullet-point {
-          color: var(--primary);
-          font-weight: bold;
-        }
-
-        .text-xxs {
-          font-size: 0.7rem;
-        }
-
-        .block {
-          display: block;
-        }
-
-        .mt-1 {
-          margin-top: 4px;
-        }
-
-        /* ギアのカテゴリ分けグリッドとインサイドパネル設定 */
-        .gear-categories-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
-        }
-
-        @media (max-width: 600px) {
-          .gear-categories-grid {
-            grid-template-columns: 1fr;
-            gap: 12px;
-          }
-        }
-
-        .gear-category-block {
-          background: rgba(255, 255, 255, 0.015);
-          border: 1px solid rgba(255, 255, 255, 0.03);
-          border-radius: 4px;
-          padding: 16px; /* 各機材ブロック内のインサイド余白 */
-          transition: border-color 0.3s;
-        }
-
-        .gear-category-block:hover {
-          border-color: rgba(51, 103, 116, 0.1);
-        }
-
-        .gear-category-subtitle {
-          font-size: 0.8rem;
-          border-left: 2px solid var(--primary);
-          padding-left: 8px;
-          font-weight: 500;
-          letter-spacing: 0.05em;
-          margin-bottom: 10px;
-        }
-
-        /* Inspirationsブロック用コンテナ */
-        .inspirations-container {
-          background: rgba(255, 255, 255, 0.015);
-          border: 1px solid rgba(255, 255, 255, 0.03);
-          border-radius: 4px;
-          padding: 16px; /* お気に入りアーティスト欄内のインサイド余白 */
-          margin-top: 24px; /* 機材欄との縦余白 */
-          margin-bottom: 16px; /* カード底辺との間の余白を追加 */
-          transition: border-color 0.3s;
-        }
-
-        .inspirations-container:hover {
-          border-color: rgba(51, 103, 116, 0.1);
-        }
-      `}</style>
-    </section>
-  );
-};
+    <details className="group mt-10 rounded-xl bg-panel p-6">
+      <summary className="cursor-pointer list-none font-bold">
+        <span className="mr-2 inline-block transition-transform group-open:rotate-90" aria-hidden>
+          ▸
+        </span>
+        影響を受けたアーティスト（{inspirations.length}組）
+      </summary>
+      <ul className="mt-4 flex flex-wrap gap-2">
+        {inspirations.map((a) => (
+          <li key={a.name}>
+            <a
+              href={a.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-full bg-raised px-3 py-1 text-sm transition-colors hover:bg-raised"
+            >
+              {a.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </Section>
+);
