@@ -1,14 +1,29 @@
-// ビルド前に「最新のショート動画」と「最新のnote記事」を取得して src/data/latest.json に書き出す。
+// ビルド前に「最新のフル動画」「最新のショート動画」「最新のnote記事」を取得して src/data/latest.json に書き出す。
 // 取得に失敗した場合は既存の latest.json をそのまま使う（ビルドは止めない）。
 import { readFile, writeFile } from 'node:fs/promises';
 
 const OUT = new URL('../src/data/latest.json', import.meta.url);
+const VIDEOS_URL = 'https://www.youtube.com/@drumcover9606/videos';
 const SHORTS_URL = 'https://www.youtube.com/@drumcover9606/shorts';
 const NOTE_RSS = 'https://note.com/ushi5432/rss';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36';
 
 const decode = (s) =>
   s.replace(/\\u0026/g, '&').replace(/\\"/g, '"').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+
+async function fetchLatestVideo() {
+  const res = await fetch(VIDEOS_URL, { headers: { 'User-Agent': UA, 'Accept-Language': 'ja' } });
+  if (!res.ok) throw new Error(`YouTube ${res.status}`);
+  const html = await res.text();
+  // 「動画」タブの先頭（最新）の1件
+  const start = html.indexOf('"richItemRenderer":{"content":{"lockupViewModel"');
+  if (start < 0) throw new Error('フル動画が見つからない');
+  const block = html.slice(start, start + 8000);
+  const id = block.match(/\/vi\/([A-Za-z0-9_-]{11})\//)?.[1];
+  const title = block.match(/"lockupMetadataViewModel":\{"title":\{"content":"((?:[^"\\]|\\.)*)"/)?.[1];
+  if (!id || !title) throw new Error('フル動画のIDかタイトルが取れない');
+  return { id, title: decode(title), url: `https://www.youtube.com/watch?v=${id}` };
+}
 
 async function fetchLatestShort() {
   const res = await fetch(SHORTS_URL, { headers: { 'User-Agent': UA, 'Accept-Language': 'ja' } });
@@ -47,13 +62,14 @@ try {
   // 初回は空
 }
 
-const [short, note] = await Promise.allSettled([fetchLatestShort(), fetchLatestNote()]);
+const [video, short, note] = await Promise.allSettled([fetchLatestVideo(), fetchLatestShort(), fetchLatestNote()]);
 const next = {
+  video: video.status === 'fulfilled' ? video.value : current.video ?? null,
   short: short.status === 'fulfilled' ? short.value : current.short ?? null,
   note: note.status === 'fulfilled' ? note.value : current.note ?? null,
 };
-for (const [name, r] of [['short', short], ['note', note]]) {
+for (const [name, r] of [['video', video], ['short', short], ['note', note]]) {
   if (r.status === 'rejected') console.warn(`[fetch-latest] ${name} の取得に失敗。前回の値を使います: ${r.reason.message}`);
 }
 await writeFile(OUT, JSON.stringify(next, null, 2) + '\n');
-console.log(`[fetch-latest] short=${next.short?.id} note=${next.note?.title}`);
+console.log(`[fetch-latest] video=${next.video?.id} short=${next.short?.id} note=${next.note?.title}`);
