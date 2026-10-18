@@ -8,11 +8,11 @@ const hiddenTags = new Set(['ドラム', '叩いてみた']);
 
 export const Hero = () => (
   <section id="top" className="foam-wall relative overflow-clip border-b border-line/40">
-    {/* 撮影スタジオの縦型LEDバー */}
-    <div aria-hidden className="led-bar absolute top-0 bottom-0 right-2.5 w-[3px] md:right-auto md:left-[56%]" />
+    {/* 撮影スタジオの縦型LEDバー（スマホでは画面端のスクロールバーに見えるので出さない） */}
+    <div aria-hidden className="led-bar absolute top-0 bottom-0 left-[56%] hidden w-[3px] md:block" />
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-y-0 right-2.5 w-[40rem] translate-x-1/2 bg-[radial-gradient(closest-side,rgb(242_244_247/0.07),transparent)] md:right-auto md:left-[56%] md:-translate-x-1/2"
+      className="pointer-events-none absolute inset-y-0 left-[56%] hidden w-[40rem] -translate-x-1/2 bg-[radial-gradient(closest-side,rgb(242_244_247/0.07),transparent)] md:block"
     />
     <div className="relative mx-auto grid max-w-5xl items-center gap-12 px-5 pt-16 pb-16 sm:px-8 md:grid-cols-[1fr_16rem] md:gap-24 md:pt-20 md:pb-24">
       <div>
