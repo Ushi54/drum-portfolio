@@ -48,7 +48,7 @@ async function fetchLatestNote() {
   if (!item) throw new Error('note記事が見つからない');
   const pick = (tag) => decode(item.match(new RegExp(`<${tag}>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?</${tag}>`))?.[1] ?? '').trim();
   return {
-    title: pick('title'),
+    title: pick('title').replace(/^#+\s*/, ''), // 記事の題名の先頭に見出しの「#」が残っていても外す
     url: pick('link'),
     thumbnail: pick('media:thumbnail'),
     publishedAt: new Date(pick('pubDate')).toISOString(),
