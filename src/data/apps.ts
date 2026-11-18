@@ -13,9 +13,9 @@ export const apps: App[] = [
     thumbnail: '/projects/pomodoro/og-image.png',
   },
   {
-    title: 'メトロノーム',
-    description: 'ドラマーの練習用メトロノーム。変拍子やポリリズムにも対応する予定です。',
-    url: null,
-    thumbnail: null,
+    title: 'ACCEL',
+    description: 'テンポが自動で上がっていく、ドラマーのためのメトロノーム。変拍子とポリリズムにも対応しています。',
+    url: 'https://accel-tempo.vercel.app',
+    thumbnail: '/projects/accel/og-image.png',
   },
 ];
