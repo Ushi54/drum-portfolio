@@ -63,3 +63,22 @@ export const BrandIcon = ({ name, className }: { name: LinkIcon } & IconProps) =
   const Icon = icons[name];
   return <Icon className={className} />;
 };
+
+// うっしーのマーク：サインの頭の弧と目（public/brand/mark.svg と同じ形）
+export const UssyMark = ({ className }: IconProps) => (
+  <svg
+    className={className}
+    viewBox="0 0 100 100"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={7}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden
+  >
+    <g transform="translate(2 2)">
+      <path d="M26 80 C20 75 18 64 19 56 C20 41 28 27 42 21 C56 15 74 19 79 34 C82 43 79 52 75 58" />
+      <path d="M44.5 40 L44.8 51 M52.3 40.5 L52 50.5" />
+    </g>
+  </svg>
+);

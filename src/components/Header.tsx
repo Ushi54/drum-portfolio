@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { UssyMark } from './icons';
 
 const nav = [
   { label: '演奏', href: '#drums' },
@@ -38,7 +39,8 @@ export const Header = () => {
   return (
     <header className={`${zone} sticky top-0 z-20 border-b border-line/40 bg-base/85 backdrop-blur transition-colors duration-500`}>
       <div className="mx-auto flex max-w-5xl items-center gap-6 px-5 py-3 sm:px-8">
-        <a href="#top" className="shrink-0 text-lg font-black tracking-wider">
+        <a href="#top" className="flex shrink-0 items-center gap-2 text-lg font-black tracking-wider">
+          <UssyMark className="size-9" />
           うっしー
         </a>
         <nav aria-label="ページ内リンク" className="-mr-5 overflow-x-auto [scrollbar-width:none] sm:mr-0 sm:ml-auto">
