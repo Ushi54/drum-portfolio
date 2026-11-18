@@ -6,14 +6,17 @@ export const Links = () => (
   <Section id="links" title="リンク">
     <div className="grid gap-8 md:grid-cols-[3fr_2fr]">
       <LinkGroup title="うっしー" items={personalLinks} />
-      <LinkGroup title="schirm.（所属バンド）" items={bandLinks} />
+      <LinkGroup title="schirm." label="My Band" items={bandLinks} />
     </div>
   </Section>
 );
 
-const LinkGroup = ({ title, items }: { title: string; items: LinkItem[] }) => (
+const LinkGroup = ({ title, label, items }: { title: string; label?: string; items: LinkItem[] }) => (
   <div>
-    <h3 className="mb-3 text-lg font-bold">{title}</h3>
+    <h3 className="mb-3 flex items-baseline gap-2 text-lg font-bold">
+      {title}
+      {label && <span className="text-xs font-normal tracking-wider text-muted">{label}</span>}
+    </h3>
     <ul className="divide-y divide-line/40 overflow-hidden rounded-xl bg-panel">
       {items.map((item) => (
         <li key={item.url}>

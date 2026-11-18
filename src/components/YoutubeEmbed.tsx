@@ -5,10 +5,11 @@ type Props = {
   youtubeId: string;
   title: string;
   vertical?: boolean;
+  onPlay?: () => void;
 };
 
 // 押すまではサムネイルだけ表示して、ページを軽く保つ
-export const YoutubeEmbed = ({ youtubeId, title, vertical = false }: Props) => {
+export const YoutubeEmbed = ({ youtubeId, title, vertical = false, onPlay }: Props) => {
   const [active, setActive] = useState(false);
   const aspect = vertical ? 'aspect-[9/16]' : 'aspect-video';
   const thumb = vertical
@@ -30,7 +31,10 @@ export const YoutubeEmbed = ({ youtubeId, title, vertical = false }: Props) => {
   return (
     <button
       type="button"
-      onClick={() => setActive(true)}
+      onClick={() => {
+        setActive(true);
+        onPlay?.();
+      }}
       className={`group relative ${aspect} w-full overflow-hidden rounded-2xl bg-raised`}
       aria-label={`${title} を再生`}
     >

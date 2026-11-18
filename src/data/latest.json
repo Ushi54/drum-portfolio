@@ -4,22 +4,55 @@
     "title": "【ヨルシカ】「靴の花火」叩いてみた【Drum Cover】",
     "url": "https://www.youtube.com/watch?v=6Uy8D_Xfi-E"
   },
+  "videos": [
+    {
+      "id": "6Uy8D_Xfi-E",
+      "title": "【ヨルシカ】「靴の花火」叩いてみた【Drum Cover】",
+      "url": "https://www.youtube.com/watch?v=6Uy8D_Xfi-E"
+    },
+    {
+      "id": "RWcDvyo2Uic",
+      "title": "【MyGO!!!!!】「聿日箋秋」叩いてみた【Drum Cover】",
+      "url": "https://www.youtube.com/watch?v=RWcDvyo2Uic"
+    },
+    {
+      "id": "xYZQBZfGTa8",
+      "title": "ボカロメドレーを叩いた",
+      "url": "https://www.youtube.com/watch?v=xYZQBZfGTa8"
+    },
+    {
+      "id": "Ji4wSXbeNS8",
+      "title": "【TENBLANK】「旋律と結晶」叩いてみた【Drum Cover】",
+      "url": "https://www.youtube.com/watch?v=Ji4wSXbeNS8"
+    },
+    {
+      "id": "-V4DDY8tvfQ",
+      "title": "【コロナナモレモモ】「恋のメガラバ」叩いてみた【Drum Cover】",
+      "url": "https://www.youtube.com/watch?v=-V4DDY8tvfQ"
+    }
+  ],
   "short": {
-    "id": "XrG7MlQJoDw",
-    "caption": "ヒバナ / DECO*27",
+    "id": "OF6KH5pp1HE",
+    "caption": "夜の向こうへ / the band apart",
     "tags": [
       "ドラム",
       "叩いてみた",
-      "デコニーナ",
-      "イントロ",
-      "hibana"
+      "バンアパ",
+      "バンドアパート",
+      "thebandapart"
     ],
-    "url": "https://www.youtube.com/shorts/XrG7MlQJoDw"
+    "url": "https://www.youtube.com/shorts/OF6KH5pp1HE"
   },
   "note": {
     "title": "ドラムのリクエストに応えるうちに、「やりたいから叩く」が分からなくなった",
     "url": "https://note.com/ushi5432/n/n3fc2e8ec62ae",
     "thumbnail": "https://assets.st-note.com/production/uploads/images/336575297/rectangle_large_type_2_4d93c6cc2d8db232e88b4ef415bb6702.png?width=800",
     "publishedAt": "2026-11-15T13:57:07.000Z"
+  },
+  "channel": {
+    "subscribers": 751,
+    "views": 489577,
+    "videos": 307,
+    "fetchedAt": "2026-11-18"
   }
 }

@@ -1,12 +1,14 @@
 import { videos, type Video } from '../data/videos';
-import { latestVideo } from '../data/latest';
+import { latestVideos } from '../data/latest';
 import { youtubeChannelUrl } from '../data/links';
 import { Section, TextLink } from './Section';
+import { VideoCarousel } from './VideoCarousel';
 import { YoutubeEmbed } from './YoutubeEmbed';
 
 export const Drums = () => {
-  // 最新のフル動画が下の一覧にも入っている場合は、一覧から外す
-  const rest = videos.filter((v) => v.youtubeId !== latestVideo?.id);
+  // カルーセルに入っている動画が下の一覧にもある場合は、一覧から外す
+  const shown = new Set(latestVideos.map((v) => v.id));
+  const rest = videos.filter((v) => !shown.has(v.youtubeId));
   return (
     <Section
       id="drums"
@@ -14,19 +16,7 @@ export const Drums = () => {
       lead="カバーやサポートで叩いた動画です。"
       action={<TextLink href={youtubeChannelUrl}>YouTubeチャンネルへ</TextLink>}
     >
-      {latestVideo && (
-        <article className="mb-10 lg:grid lg:grid-cols-[2fr_1fr] lg:items-end lg:gap-8">
-          <YoutubeEmbed youtubeId={latestVideo.id} title={latestVideo.title} />
-          <div className="mt-3">
-            <span className="inline-block rounded-full bg-raised px-3 py-0.5 text-xs">最新の動画</span>
-            <h3 className="mt-2 text-lg font-bold">
-              <a href={latestVideo.url} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                {latestVideo.title}
-              </a>
-            </h3>
-          </div>
-        </article>
-      )}
+      <VideoCarousel videos={latestVideos} />
       <div className="grid gap-x-6 gap-y-8 sm:grid-cols-3">
         {rest.map((video) => (
           <article key={video.youtubeId}>

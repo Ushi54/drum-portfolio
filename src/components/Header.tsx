@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 const nav = [
   { label: '演奏', href: '#drums' },
+  { label: 'プロフィール', href: '#about' },
   { label: 'note', href: '#writing' },
   { label: 'アプリ', href: '#apps' },
-  { label: 'プロフィール', href: '#about' },
   { label: 'リンク', href: '#links' },
 ];
 
-type Zone = 'zone-night' | 'zone-day';
+type Zone = string;
 
 // ヘッダーの真下にあるエリア（data-zone）に合わせて、ヘッダーの色を夜／昼に切り替える
 const HEADER_BOTTOM = 56;

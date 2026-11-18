@@ -37,6 +37,23 @@
   color-scheme: dark;
 }
 
+/* ドラムのほかの活動（note・アプリ）：真っ白（2026-11-18 うっしー指定。#FCFAF2 から変更） */
+.zone-paper {
+  --z-base: #ffffff;
+  --z-panel: #e8e8e8;
+  --z-raised: #dadada;
+  --z-line: #c8c8c8;
+  --z-muted: #555555;
+  --z-fg: #141414;
+  --z-accent: #141414;
+  --z-on-accent: #ffffff;
+  --z-glow: none;
+  --z-text-glow: none;
+  color-scheme: light;
+}
+
+
+
 /* 昼：design_system のパレット */
 .zone-day {
   --z-base: #f5efe1;
@@ -63,6 +80,7 @@
     line-height: 1.8;
   }
   .zone-night,
+  .zone-paper,
   .zone-day {
     @apply bg-base text-fg;
   }
