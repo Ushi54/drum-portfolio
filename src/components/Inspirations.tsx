@@ -20,7 +20,7 @@ export const Inspirations = () => {
   const [items] = useState(() =>
     shuffle(inspirations).map((a) => ({
       ...a,
-      icon: (icons as Record<string, string>)[a.url],
+      icon: ('icon' in a && a.icon) || (icons as Record<string, string>)[a.url],
       size: SIZES[Math.floor(Math.random() * SIZES.length)],
     })),
   );

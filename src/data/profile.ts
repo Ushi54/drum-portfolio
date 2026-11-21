@@ -85,14 +85,16 @@ export const gear: { category: string; items: GearItem[] }[] = [
 ];
 
 export const inspirations = [
-  { name: 'ヨルシカ', url: 'https://www.youtube.com/@nbuna' },
+  // アイコンはロゴ（鹿の目）を公式サイトから使う（YouTubeのアイコンではなく）
+  { name: 'ヨルシカ', url: 'https://www.youtube.com/@nbuna', icon: 'https://yorushika.com/apple-touch-icon.png' },
   { name: 'ずっと真夜中でいいのに。', url: 'https://www.youtube.com/@ZUTOMAYO' },
   { name: 'NoisyCell', url: 'https://www.youtube.com/@noisycell' },
   { name: 'Fall Out Boy', url: 'https://www.youtube.com/@falloutboy' },
   { name: 'Polyphia', url: 'https://www.youtube.com/@Polyphia' },
   { name: 'Fear, and Loathing in Las Vegas', url: 'https://www.youtube.com/@fearandloathinginlasvegas9431' },
-  { name: 'the band apart', url: 'https://www.youtube.com/@asiangothiclabel' },
-  { name: 'harha', url: 'https://www.youtube.com/@harha868' },
+  // アイコンはメンバー4人の写真（YouTubeの「the band apart (naked) - トピック」のアイコン）。リンク先はレーベルのチャンネルのまま
+  { name: 'the band apart', url: 'https://www.youtube.com/@asiangothiclabel', icon: 'https://yt3.googleusercontent.com/CsdUCwdWvp-K3oh6B6UoAPcUB7xqCNVrCsL95FwdbCduwbozM69V0umzSsxQMbp-qkEiIQmx-g=s240-c-k-c0x00ffffff-no-rj' },
+  { name: 'harha', url: 'https://www.youtube.com/@harha_official' },
   { name: 'mabanua', url: 'https://www.youtube.com/@mabanua_official' },
   { name: 'supercell', url: 'https://www.youtube.com/@spclryo2673' },
   { name: 'haruka nakamura', url: 'https://www.youtube.com/@harukanakamura_' },
@@ -103,5 +105,5 @@ export const inspirations = [
   { name: 'RADWIMPS', url: 'https://www.youtube.com/@RADWIMPS_official' },
   { name: 'UNISON SQUARE GARDEN', url: 'https://www.youtube.com/@unisonsgofficial' },
   { name: 'CHiCO with HoneyWorks', url: 'https://www.youtube.com/@chicoxxx' },
-  { name: 'SANOVA', url: 'https://www.youtube.com/@SANOVA-Official' },
+  { name: 'SANOVA', url: 'https://www.youtube.com/@SANOVA0919' },
 ];
