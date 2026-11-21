@@ -15,7 +15,7 @@ const shuffle = <T,>(list: T[]) => {
 };
 
 // 影響を受けたアーティスト：YouTube公式チャンネルのアイコンを、開くたびにランダムな順・大きさで並べる。
-// 普段は白黒、ポインターを当てる（またはキーボードで選ぶ）と色が戻り、アーティスト名が出る。
+// いつもカラーで表示し、ポインターを当てる（またはキーボードで選ぶ）と少し大きくなり、アーティスト名が出る。
 export const Inspirations = () => {
   const [items] = useState(() =>
     shuffle(inspirations).map((a) => ({
@@ -44,7 +44,7 @@ export const Inspirations = () => {
                   alt=""
                   loading="lazy"
                   referrerPolicy="no-referrer"
-                  className="size-full object-cover grayscale transition duration-300 group-hover:scale-105 group-hover:grayscale-0 group-focus-visible:grayscale-0"
+                  className="size-full object-cover transition duration-300 group-hover:scale-105"
                 />
               ) : (
                 <span className="grid size-full place-items-center text-xl font-bold text-muted">{a.name.slice(0, 1)}</span>
