@@ -59,7 +59,8 @@ export const gear: { category: string; items: GearItem[] }[] = [
     items: [
       { kind: 'スネア', name: 'Yamaha RBS1455（14"×5.5"）' },
       { kind: 'ペダル', name: 'Yamaha FP9C', url: 'https://jp.yamaha.com/musical-instruments/drums/products/hardware/fp9-series/index.html' },
-      { kind: 'チャイナ', name: 'Zildjian 漢家兒 18"', url: 'https://www.soundhouse.co.jp/products/detail/item/86223/' },
+      // 前のリンクは18インチの商品ページだったので外した（20インチのページは見つかっていない。2026-11-22）
+      { kind: 'チャイナ', name: 'Zildjian 漢家兜 20"' },
       { kind: 'スプラッシュ', name: '小出 808 Splash 8"', url: 'https://global.ikebe-gakki.com/products/132455' },
       { kind: 'スティック', name: 'Pearl 110HC', url: 'https://www.soundhouse.co.jp/products/detail/item/201880/' },
     ],
