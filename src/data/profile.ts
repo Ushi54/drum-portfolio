@@ -51,6 +51,7 @@ export const timeline = [
 ];
 
 // 機材。url は公式の商品ページ。公式が見つからないものは通販サイトのページ（2026-11-18 社長の了承）。
+// リンク先は日本のサイトにする（2026-11-22 社長が決定）
 // スネアは型番がはっきりしないので url なし
 export type GearItem = { kind: string; name: string; url?: string };
 export const gear: { category: string; items: GearItem[] }[] = [
@@ -61,7 +62,7 @@ export const gear: { category: string; items: GearItem[] }[] = [
       { kind: 'ペダル', name: 'Yamaha FP9C', url: 'https://jp.yamaha.com/musical-instruments/drums/products/hardware/fp9-series/index.html' },
       // 前のリンクは18インチの商品ページだったので外した（20インチのページは見つかっていない。2026-11-22）
       { kind: 'チャイナ', name: 'Zildjian 漢家兜 20"' },
-      { kind: 'スプラッシュ', name: '小出 808 Splash 8"', url: 'https://global.ikebe-gakki.com/products/132455' },
+      { kind: 'スプラッシュ', name: '小出 808 Splash 8"', url: 'https://komakitsusho.co.jp/items/808-8sp/' },
       { kind: 'スティック', name: 'Pearl 110HC', url: 'https://www.soundhouse.co.jp/products/detail/item/201880/' },
     ],
   },
